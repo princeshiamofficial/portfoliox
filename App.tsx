@@ -10,6 +10,7 @@ import { AboutPage } from './components/pages/about/about-page';
 import { ContactPage } from './components/pages/contact/contact-page';
 import { BlogPage } from './components/pages/blog/blog-page';
 import { ThankYouPage } from './components/pages/thank-you/thank-you-page';
+import ScrollToTop from './components/shared/ScrollToTop';
 
 // Admin Imports
 import { AdminLogin } from './components/admin/pages/login/AdminLogin';
@@ -25,6 +26,7 @@ const ServicesPageWrapper = () => {
 const App: React.FC = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         {/* Public Website Routes */}
         <Route element={<BaseLayout />}>
