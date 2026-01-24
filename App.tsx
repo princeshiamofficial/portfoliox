@@ -9,6 +9,7 @@ import { ServicesPage } from './components/pages/services/services-page';
 import { AboutPage } from './components/pages/about/about-page';
 import { ContactPage } from './components/pages/contact/contact-page';
 import { BlogPage } from './components/pages/blog/blog-page';
+import { ThankYouPage } from './components/pages/thank-you/thank-you-page';
 
 // Admin Imports
 import { AdminLogin } from './components/admin/pages/login/AdminLogin';
@@ -35,6 +36,7 @@ const App: React.FC = () => {
           <Route path="/meeting" element={<MeetingPage />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/refund" element={<RefundPolicy />} />
+          <Route path="/thank-you" element={<ThankYouPage />} />
         </Route>
 
         {/* Admin Auth (outside layout) */}
