@@ -44,9 +44,9 @@ export const OurServices: React.FC = () => {
     return (
         <section className="bg-black py-24 relative overflow-hidden font-sans border-t border-zinc-900">
             {/* Header */}
-            <div className="text-center mb-20 relative z-10 px-4">
+            <div className="text-center mb-16 relative z-10 px-4">
                 <span className="text-orange-500 font-bold tracking-widest uppercase text-xs mb-3 block">What We Do</span>
-                <h2 className="text-white text-4xl md:text-5xl font-serif font-bold tracking-tight mb-4">
+                <h2 className="text-white text-3xl md:text-5xl font-serif font-bold tracking-tight mb-4">
                     Our Premium Services
                 </h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto rounded-full" />
@@ -58,7 +58,7 @@ export const OurServices: React.FC = () => {
                     {SERVICES.map((service, idx) => (
                         <div
                             key={idx}
-                            className="group p-8 rounded-3xl bg-zinc-900/50 border border-zinc-800 hover:border-orange-500/30 hover:bg-zinc-900 transition-all duration-300 relative overflow-hidden"
+                            className="group p-6 md:p-8 rounded-3xl bg-zinc-900/50 border border-zinc-800 hover:border-orange-500/30 hover:bg-zinc-900 transition-all duration-300 relative overflow-hidden"
                         >
                             {/* Hover Gradient Background */}
                             <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

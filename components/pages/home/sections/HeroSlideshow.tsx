@@ -39,14 +39,14 @@ export const HeroSlideshow: React.FC = () => {
             </div>
 
             {/* Content */}
-            <div className="relative z-20 max-w-4xl text-center text-white" data-aos="fade-up" data-aos-delay="300">
-                <h1 className="text-4xl md:text-7xl font-extrabold leading-tight mb-6 drop-shadow-lg">
+            <div className="relative z-20 max-w-4xl text-center text-white px-4" data-aos="fade-up" data-aos-delay="300">
+                <h1 className="text-3xl md:text-7xl font-extrabold leading-tight mb-4 md:mb-6 drop-shadow-lg">
                     Bring <span className="text-orange-500">Your Brand</span><br />to Life with Color Hut
                 </h1>
-                <p className="text-base md:text-xl mb-8 md:mb-10 max-w-xl mx-auto drop-shadow-md px-4 opacity-90">
+                <p className="text-sm md:text-xl mb-8 md:mb-10 max-w-xl mx-auto drop-shadow-md opacity-90">
                     Stunning, user-focused designs crafted to make your brand unforgettable and stand out in a crowded market.
                 </p>
-                <Link to="/services#requirment" className="inline-block bg-orange-500 hover:bg-orange-600 transition text-white font-bold py-4 px-12 rounded-full shadow-lg drop-shadow-lg transform hover:scale-105 active:scale-95">
+                <Link to="/services#requirment" className="inline-block bg-orange-500 hover:bg-orange-600 transition text-white font-bold py-3 px-10 md:py-4 md:px-12 rounded-full shadow-lg drop-shadow-lg transform hover:scale-105 active:scale-95 text-sm md:text-base">
                     Start a Project
                 </Link>
             </div>

@@ -55,8 +55,8 @@ export const CustomerReviews: React.FC = () => {
     return (
         <section className="bg-black py-20 relative overflow-hidden font-sans">
             {/* Header */}
-            <div className="text-center mb-16 relative z-10">
-                <h2 className="text-white text-4xl md:text-5xl font-serif font-bold tracking-tight">
+            <div className="text-center mb-10 md:mb-16 relative z-10 px-4">
+                <h2 className="text-white text-3xl md:text-5xl font-serif font-bold tracking-tight">
                     Customer Review
                 </h2>
             </div>

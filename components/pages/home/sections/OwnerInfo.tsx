@@ -12,12 +12,12 @@ export const OwnerInfo: React.FC = () => {
                             <img
                                 src="https://i.ibb.co.com/3YCYRZtD/007e61cc-15d3-4e0f-8581-c5d13073f783-Picsart-Background-Remover.png"
                                 alt="Abdul Awal - Founder of Color Hut Creative Agency"
-                                className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700 bg-gray-200"
+                                className="w-full h-[400px] md:h-[500px] object-cover hover:scale-105 transition-transform duration-700 bg-gray-200"
                             />
 
                             {/* Overlay Card */}
-                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-8 text-white">
-                                <h3 className="text-2xl font-bold mb-1">Abdul Awal</h3>
+                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 md:p-8 text-white">
+                                <h3 className="text-xl md:text-2xl font-bold mb-1">Abdul Awal</h3>
                                 <p className="text-orange-400 font-medium">Founder</p>
                             </div>
                         </div>
@@ -30,10 +30,10 @@ export const OwnerInfo: React.FC = () => {
                         <span className="text-orange-500 font-bold tracking-wider uppercase text-sm mb-4 block">
                             The Visionary
                         </span>
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-8 leading-tight">
+                        <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6 md:mb-8 leading-tight">
                             Crafting Memories <br /> Through Flavor.
                         </h2>
-                        <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+                        <div className="space-y-4 md:space-y-6 text-gray-600 text-base md:text-lg leading-relaxed">
                             <p>
                                 "I believe that food is more than just sustenance; it's a language that connects us all. My
                                 journey began in a small family kitchen, where the aroma of spices sparked a lifelong

@@ -15,10 +15,10 @@ export const HomeLogos: React.FC = () => {
     return (
         <section className="bg-black select-none font-sans">
             {/* Bright Orange Header Strip */}
-            <div className="bg-[#ff4500] py-6 relative overflow-hidden shadow-[0_4px_20px_rgba(255,69,0,0.3)] z-20">
+            <div className="bg-[#ff4500] py-4 md:py-6 relative overflow-hidden shadow-[0_4px_20px_rgba(255,69,0,0.3)] z-20">
                 <div className="absolute inset-0 bg-white/5 opacity-20 transform -skew-x-12 translate-x-1/2"></div>
                 <div className="container mx-auto px-4 text-center relative z-10">
-                    <h2 className="text-white text-2xl md:text-3xl font-bold tracking-wider uppercase drop-shadow-md font-heading">
+                    <h2 className="text-white text-xl md:text-3xl font-bold tracking-wider uppercase drop-shadow-md font-heading">
                         Our Previous Customers
                     </h2>
                 </div>
