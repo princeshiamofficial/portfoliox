@@ -20,7 +20,7 @@ import { AdminLayout } from './components/admin/layout/AdminLayout';
 // Wrapper to provide onBookMeeting functionality compatible with Router
 const ServicesPageWrapper = () => {
   const navigate = useNavigate();
-  return <ServicesPage onBookMeeting={() => navigate('/meeting')} />;
+  return <ServicesPage onBookMeeting={() => navigate('/services#requirment')} />;
 };
 
 const App: React.FC = () => {

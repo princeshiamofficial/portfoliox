@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export const HeroSlideshow: React.FC = () => {
     const [activeSlide, setActiveSlide] = React.useState(0);
@@ -46,9 +46,9 @@ export const HeroSlideshow: React.FC = () => {
                 <p className="text-base md:text-xl mb-8 md:mb-10 max-w-xl mx-auto drop-shadow-md px-4 opacity-90">
                     Stunning, user-focused designs crafted to make your brand unforgettable and stand out in a crowded market.
                 </p>
-                <a href="#contact" className="inline-block bg-orange-500 hover:bg-orange-600 transition text-white font-bold py-4 px-12 rounded-full shadow-lg drop-shadow-lg transform hover:scale-105 active:scale-95">
+                <Link to="/services#requirment" className="inline-block bg-orange-500 hover:bg-orange-600 transition text-white font-bold py-4 px-12 rounded-full shadow-lg drop-shadow-lg transform hover:scale-105 active:scale-95">
                     Start a Project
-                </a>
+                </Link>
             </div>
 
             {/* Navigation dots */}

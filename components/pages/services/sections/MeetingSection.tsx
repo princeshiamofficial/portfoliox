@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface MeetingSectionProps {
     onBookMeeting?: () => void;
@@ -77,15 +78,9 @@ export const MeetingSection: React.FC<MeetingSectionProps> = ({ onBookMeeting })
                                 </p>
 
                                 {/* Button */}
-                                <a
-                                    href="#meeting"
-                                    onClick={(e) => {
-                                        if (onBookMeeting) {
-                                            e.preventDefault();
-                                            onBookMeeting();
-                                        }
-                                    }}
-                                    className="inline-flex items-center gap-3 bg-white hover:bg-white text-[#1f2937] px-8 py-4 rounded-xl shadow-sm border border-gray-200 transition-all duration-300 hover:shadow-md hover:-translate-y-1 group w-full md:w-auto justify-center md:justify-start cursor-pointer"
+                                <Link
+                                    to="/services#requirment"
+                                    className="inline-flex items-center gap-3 bg-white hover:bg-white text-[#1f2937] px-8 py-4 rounded-xl shadow-sm border border-gray-200 transition-all duration-300 hover:shadow-md hover:-translate-y-1 group w-full md:w-auto justify-center md:justify-start cursor-pointer transition-none"
                                 >
                                     <img
                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Google_Meet_icon_%282020%29.svg/1024px-Google_Meet_icon_%282020%29.svg.png"
@@ -93,7 +88,7 @@ export const MeetingSection: React.FC<MeetingSectionProps> = ({ onBookMeeting })
                                         className="w-6 h-6 object-contain group-hover:scale-110 transition-transform"
                                     />
                                     <span className="font-bengali font-bold text-[18px]">ফর্ম সাবমিট করুন</span>
-                                </a>
+                                </Link>
                             </div>
                         </div>
 
