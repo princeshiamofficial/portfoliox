@@ -1,0 +1,4 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 80' width='300' height='80'>
+  <path fill='#f97316' d='M7 2v11h3v9l7-12h-4l4-8z' transform='scale(3) translate(2, 2)' />
+  <text x='90' y='55' font-family='Arial, sans-serif' font-weight='800' font-size='40' letter-spacing='2' fill='#ffffff'>FLUX</text>
+</svg>

@@ -1,0 +1,145 @@
+{
+    "siteName": "Color Hut - Creative Agency & Digital Studio",
+    "defaultTitle": "Color Hut | Premium Digital Marketing & Creative Services",
+    "defaultDescription": "Color Hut is a leading creative agency offering graphics design, web development, digital marketing, photography, videography, and customer relationship services. Transform your brand with our expert team.",
+    "defaultKeywords": "creative agency, digital marketing, graphics design, web development, photography, videography, branding, logo design, social media marketing, SEO services, Bangladesh creative agency",
+    "author": "Color Hut Creative Agency",
+    "language": "en",
+    "locale": "en_US",
+    "siteUrl": "https://colorhut.com",
+    "ogImage": "/og-image.jpg",
+    "twitterHandle": "@colorhut",
+    "pages": {
+        "home": {
+            "title": "Color Hut | Creative Agency - Graphics, Web, Marketing & More",
+            "description": "Transform your brand with Color Hut's premium creative services. Expert graphics design, web development, digital marketing, photography, videography, and customer support. Serving clients globally and across Bangladesh.",
+            "keywords": "creative agency Bangladesh, graphics design services, web development agency, digital marketing Bangladesh, professional photography, video production, brand identity design",
+            "ogTitle": "Color Hut - Your Creative Partner for Digital Success",
+            "ogDescription": "Premium creative services including graphics design, web development, digital marketing, and more. Trusted by businesses worldwide.",
+            "canonical": "https://colorhut.com"
+        },
+        "services": {
+            "title": "Our Services | Graphics, Web, Marketing & Creative Solutions",
+            "description": "Explore Color Hut's comprehensive creative services: Brand Identity Design, Web & App Development, Digital Marketing Strategy, Video Production, Professional Photography, and Customer Support Solutions.",
+            "keywords": "creative services, brand identity design, web app development, digital marketing strategy, video production, professional photography, customer support",
+            "ogTitle": "Premium Creative Services - Color Hut",
+            "ogDescription": "From brand identity to digital marketing, we offer complete creative solutions for your business growth.",
+            "canonical": "https://colorhut.com/services"
+        },
+        "meeting": {
+            "title": "Book a Meeting | Color Hut Creative Consultation",
+            "description": "Schedule a free consultation with Color Hut's creative experts. Discuss your project requirements and get a customized solution for your business needs.",
+            "keywords": "book consultation, creative consultation, project discussion, free meeting, business consultation",
+            "ogTitle": "Book Your Free Consultation - Color Hut",
+            "ogDescription": "Get expert advice on your creative projects. Schedule a meeting with our team today.",
+            "canonical": "https://colorhut.com/meeting"
+        },
+        "privacy": {
+            "title": "Privacy Policy | Color Hut Creative Agency",
+            "description": "Read Color Hut's privacy policy to understand how we collect, use, and protect your personal information and data.",
+            "keywords": "privacy policy, data protection, personal information, GDPR compliance",
+            "ogTitle": "Privacy Policy - Color Hut",
+            "ogDescription": "Your privacy matters. Learn how we protect your data and respect your privacy.",
+            "canonical": "https://colorhut.com/privacy"
+        },
+        "refund": {
+            "title": "Refund Policy | Color Hut Terms & Conditions",
+            "description": "Review Color Hut's refund and cancellation policy. Understand our terms for service delivery, payments, and refund procedures.",
+            "keywords": "refund policy, cancellation policy, terms and conditions, payment terms",
+            "ogTitle": "Refund Policy - Color Hut",
+            "ogDescription": "Transparent refund and cancellation terms for all our creative services.",
+            "canonical": "https://colorhut.com/refund"
+        }
+    },
+    "departments": [
+        {
+            "name": "Customer Relationship",
+            "description": "Building strong connections and ensuring customer satisfaction through dedicated support.",
+            "keywords": "customer support, client relationship, customer service, CRM"
+        },
+        {
+            "name": "Graphics Design",
+            "description": "Creative branding, logos, and visual identities that make your business stand out.",
+            "keywords": "graphics design, logo design, branding, visual identity, creative design"
+        },
+        {
+            "name": "Logistics",
+            "description": "Efficient supply chain solutions and reliable delivery management strategies.",
+            "keywords": "logistics, supply chain, delivery management, operations"
+        },
+        {
+            "name": "Photography",
+            "description": "Professional product, event, and portrait photography capturing moments perfectly.",
+            "keywords": "professional photography, product photography, event photography, portrait photography"
+        },
+        {
+            "name": "Videography",
+            "description": "Cinematic video production, editing, and storytelling for your brand.",
+            "keywords": "videography, video production, video editing, cinematic videos, brand storytelling"
+        },
+        {
+            "name": "Digital Marketing",
+            "description": "Strategic social media management, SEO, and paid campaigns to grow your audience.",
+            "keywords": "digital marketing, social media marketing, SEO services, PPC advertising, content marketing"
+        }
+    ],
+    "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Color Hut Creative Agency",
+        "url": "https://colorhut.com",
+        "logo": "https://colorhut.com/logo.png",
+        "description": "Premium creative agency offering graphics design, web development, digital marketing, photography, and videography services.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "BD",
+            "addressLocality": "Dhaka"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+880-XXX-XXXXXX",
+            "contactType": "Customer Service",
+            "email": "info@colorhut.com"
+        },
+        "sameAs": [
+            "https://facebook.com/colorhut",
+            "https://twitter.com/colorhut",
+            "https://linkedin.com/company/colorhut",
+            "https://instagram.com/colorhut"
+        ],
+        "areaServed": [
+            {
+                "@type": "Country",
+                "name": "Bangladesh"
+            },
+            {
+                "@type": "Country",
+                "name": "Global"
+            }
+        ],
+        "serviceType": [
+            "Graphics Design",
+            "Web Development",
+            "Digital Marketing",
+            "Photography",
+            "Videography",
+            "Customer Relationship Management"
+        ]
+    },
+    "robots": {
+        "index": true,
+        "follow": true,
+        "googlebot": "index, follow",
+        "bingbot": "index, follow"
+    },
+    "openGraph": {
+        "type": "website",
+        "siteName": "Color Hut Creative Agency",
+        "locale": "en_US"
+    },
+    "twitter": {
+        "card": "summary_large_image",
+        "site": "@colorhut",
+        "creator": "@colorhut"
+    }
+}
