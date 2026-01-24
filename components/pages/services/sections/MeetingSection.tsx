@@ -52,13 +52,13 @@ export const MeetingSection: React.FC<MeetingSectionProps> = ({ onBookMeeting })
                                 <img
                                     src="https://colorhutbd.xyz/image/orange-girl2.png"
                                     alt="Meeting"
-                                    className="relative z-20 w-auto h-[350px] md:h-[450px] lg:h-[580px] object-contain mb-0 leading-none block"
+                                    className="relative z-20 w-auto h-[280px] sm:h-[450px] lg:h-[580px] object-contain mb-0 leading-none block"
                                 />
                             </div>
                         </div>
 
                         {/* Right Side: Content Card */}
-                        <div className="w-full lg:w-[45%] bg-[#fff7ed] p-10 md:p-16 flex flex-col justify-center relative z-20">
+                        <div className="w-full lg:w-[45%] bg-[#fff7ed] p-8 md:p-16 flex flex-col justify-center relative z-20">
                             <div className="max-w-lg mx-auto lg:mx-0">
                                 {/* Live Badge */}
                                 {/*<div className="flex items-center gap-3 mb-5">*/}
@@ -67,12 +67,12 @@ export const MeetingSection: React.FC<MeetingSectionProps> = ({ onBookMeeting })
                                 {/*</div>*/}
 
                                 {/* Title */}
-                                <h2 className="font-bengali text-[32px] md:text-[42px] font-bold text-[#ea580c] mb-6 leading-[1.2]">
+                                <h2 className="font-bengali text-[28px] md:text-[42px] font-bold text-[#ea580c] mb-5 leading-[1.2]">
                                     একটি মিটিং করতে চান?
                                 </h2>
 
                                 {/* Description */}
-                                <p className="font-bengali text-[#4b5563] text-[17px] md:text-[18px] leading-[1.7] mb-10">
+                                <p className="font-bengali text-[#4b5563] text-base md:text-[18px] leading-[1.7] mb-8">
                                     আপনার মেনু নিয়ে আমাদের সাথে সরাসরি কথা বলতে চান? <br className="hidden xl:block" />
                                     তাহলে এখানে ক্লিক করে ফর্ম সাবমিট করুন। আমরা আপনার সাথে যোগাযোগ করব।
                                 </p>

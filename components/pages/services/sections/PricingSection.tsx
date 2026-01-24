@@ -20,9 +20,9 @@ const PricingCard: React.FC<PricingCardProps> = ({ name, price, originalPrice, d
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: delay * 0.2, duration: 0.5 }}
-        className={`relative bg-white rounded-3xl p-8 flex flex-col items-center transition-all duration-500 group ${isPopular
-            ? 'shadow-[0_20px_60px_-15px_rgba(234,88,12,0.25)] scale-105 z-10 ring-2 ring-primary ring-offset-2 ring-offset-[#F8FAFC]'
-            : 'shadow-xl border border-gray-100 hover:border-primary/30 hover:-translate-y-2 hover:shadow-2xl'
+        className={`relative bg-white rounded-3xl p-6 md:p-8 flex flex-col items-center transition-all duration-500 group ${isPopular
+            ? 'shadow-[0_20px_60px_-15px_rgba(234,88,12,0.25)] sm:scale-105 z-10 ring-2 ring-primary ring-offset-2 ring-offset-[#F8FAFC] my-4 sm:my-0'
+            : 'shadow-xl border border-gray-100 hover:border-primary/30 sm:hover:-translate-y-2 hover:shadow-2xl'
             }`}
     >
         {isPopular && (

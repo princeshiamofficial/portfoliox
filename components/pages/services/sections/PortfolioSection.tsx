@@ -76,7 +76,7 @@ export const PortfolioSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           <AnimatePresence mode='wait'>
             {images.map((src, idx) => (
               <motion.div
@@ -85,21 +85,21 @@ export const PortfolioSection: React.FC = () => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3, delay: idx * 0.05 }}
-                className="aspect-[4/3] overflow-hidden rounded-2xl group relative cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 bg-white border border-white/20"
+                className="aspect-[4/5] sm:aspect-[4/3] overflow-hidden rounded-xl md:rounded-2xl group relative cursor-pointer shadow-md hover:shadow-2xl transition-all duration-500 bg-white border border-white/20"
               >
                 <img
                   src={src}
                   alt={`Portfolio ${idx}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-dark/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                {/* Hover Overlay - hidden on touch devices or smaller screens to simplify */}
+                <div className="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center backdrop-blur-[1px] hidden md:flex">
                   <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 flex gap-4">
-                    <button className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-dark hover:text-primary transition-colors shadow-lg hover:scale-110 duration-300">
-                      <Plus size={24} />
+                    <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-dark hover:text-primary transition-colors shadow-lg hover:scale-110 duration-300">
+                      <Plus size={20} />
                     </button>
-                    <button className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-dark transition-colors shadow-lg hover:scale-110 duration-300">
-                      <Eye size={20} />
+                    <button className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-dark transition-colors shadow-lg hover:scale-110 duration-300">
+                      <Eye size={18} />
                     </button>
                   </div>
                 </div>

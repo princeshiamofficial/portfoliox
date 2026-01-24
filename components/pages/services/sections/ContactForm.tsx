@@ -57,12 +57,12 @@ export const ContactForm: React.FC = () => {
   return (
     <section className="py-24 relative" id="requirment">
       <div className="max-w-[1290px] mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="font-bengali text-3xl md:text-4xl font-bold text-dark mb-3">আপনার তথ্য দিয়ে ফর্ম সাবমিট করুন</h2>
-          <p className="font-bengali text-gray-500">আমরা দ্রুত আপনার সাথে যোগাযোগ করবো</p>
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="font-bengali text-2xl md:text-4xl font-bold text-dark mb-3">আপনার তথ্য দিয়ে ফর্ম সাবমিট করুন</h2>
+          <p className="font-bengali text-sm md:text-base text-gray-500">আমরা দ্রুত আপনার সাথে যোগাযোগ করবো</p>
         </div>
 
-        <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-2xl md:p-12 p-6 rounded-3xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] border border-white/60 relative overflow-hidden ring-1 ring-white/80">
+        <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-2xl md:p-12 p-5 rounded-3xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] border border-white/60 relative overflow-hidden ring-1 ring-white/80">
           <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary via-purple-500 to-primary"></div>
 
           <form onSubmit={handleSubmit}>

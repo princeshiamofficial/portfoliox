@@ -37,30 +37,30 @@ export const Hero: React.FC = () => {
   }, [text, isDeleting, loopNum, typingSpeed]);
 
   return (
-    <section className="relative pt-32 pb-12 lg:pt-44 lg:pb-28 bg-gradient-to-b from-orange-50/50 to-white overflow-visible">
+    <section className="relative pt-24 pb-12 lg:pt-44 lg:pb-28 bg-gradient-to-b from-orange-50/50 to-white overflow-hidden">
       <div className="max-w-[1290px] mx-auto px-4 md:px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-0">
-          
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-0">
+
           {/* Left Content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left order-2 lg:order-1"
           >
-            <h1 className="font-bengali font-bold text-dark leading-[1.2] tracking-tight text-4xl md:text-5xl lg:text-[64px] mb-4 min-h-[1.2em]">
+            <h1 className="font-bengali font-bold text-dark leading-[1.2] tracking-tight text-3xl md:text-5xl lg:text-[64px] mb-4 min-h-[1.2em]">
               <span className="text-primary inline-flex items-center">
                 {text}
                 <span className="w-1 h-[0.8em] bg-primary ml-1 animate-pulse"></span>
               </span>
-              <span className="ml-3">মেনু</span>
+              <span className="ml-2 md:ml-3">মেনু</span>
             </h1>
 
-            <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0 leading-relaxed font-bengali mb-6 font-bold">
+            <p className="text-base md:text-lg text-gray-600 max-w-lg mx-auto lg:mx-0 leading-relaxed font-bengali mb-6 font-bold">
               আমাদের প্রফেশনাল ডিজাইন সার্ভিসের মাধ্যমে আপনার ব্র্যান্ডের শক্তিশালী পরিচিতি গড়ে তুলুন। ক্রিয়েটিভ, অরিজিনাল এবং স্ট্র্যাটেজিক ডিজাইন যা আপনার ব্র্যান্ডকে প্রতিযোগিতার থেকে স্পষ্টভাবে আলাদা করে তুলবে।
             </p>
 
-            <ul className="font-bengali space-y-2 mb-8 inline-block text-left">
+            <ul className="font-bengali space-y-3 mb-8 inline-block text-left w-full max-w-md lg:max-w-none px-2 sm:px-0">
               {[
                 "স্মার্ট মেনু ডিরেক্টরি",
                 "কাস্টমাইজ ওন ডিমান্ড",
@@ -68,72 +68,75 @@ export const Hero: React.FC = () => {
                 "পৃথিবীর সকল প্রান্তে ডেলিভারি",
                 "বাংলা & ইংরেজি এরাবিকসহ ১৪ টি ভাষায় মেনু"
               ].map((item, i) => (
-                <li key={i} className="flex items-center gap-2 text-gray-700 font-medium">
-                  <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0">
+                <li key={i} className="flex items-start gap-3 text-gray-700 font-medium text-sm md:text-base">
+                  <div className="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check className="w-3 h-3 stroke-[3]" />
                   </div>
-                  {item}
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="#demo" className="font-bengali bg-primary hover:bg-primary-dark text-white px-10 py-3.5 rounded bg-primary font-medium text-lg inline-flex items-center justify-center gap-2 transition-all shadow-lg shadow-orange-200 hover:shadow-orange-300 hover:-translate-y-0.5">
+              <a href="#demo" className="font-bengali bg-primary hover:bg-primary-dark text-white px-10 py-4 rounded-xl bg-primary font-bold text-lg inline-flex items-center justify-center gap-2 transition-all shadow-lg shadow-orange-200 hover:shadow-orange-300 hover:-translate-y-0.5 w-full sm:w-auto">
                 ডেমো দেখুন
               </a>
             </div>
           </motion.div>
 
           {/* Right Content - Image */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             className="relative flex justify-center lg:justify-end order-1 lg:order-2"
           >
-            {/* Solid Circle Background */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] lg:w-[550px] lg:h-[550px] bg-[#fff7ed] rounded-full -z-10"></div>
-            
-            <img 
-              src="https://colorhutbd.xyz/image/orange-girl1.png" 
-              alt="Creative Graphics Designer" 
-              className="w-full max-w-[500px] h-auto object-contain drop-shadow-2xl relative z-10"
+            {/* Solid Circle Background - Responsive Size */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[550px] lg:h-[550px] bg-[#fff7ed] rounded-full -z-10"></div>
+
+            <img
+              src="https://colorhutbd.xyz/image/orange-girl1.png"
+              alt="Creative Graphics Designer"
+              className="w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[500px] h-auto object-contain drop-shadow-2xl relative z-10"
             />
           </motion.div>
         </div>
 
         {/* Stats Section */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="relative z-20 mt-6 lg:mt-0"
+          className="relative z-20 mt-12 lg:mt-0"
         >
-          <div className="bg-white rounded-2xl shadow-soft border border-gray-100 p-8 md:p-10">
-            <div className="flex flex-col lg:flex-row gap-8 items-center">
-              
+          <div className="bg-white rounded-3xl shadow-soft border border-gray-100 p-6 md:p-10">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center">
+
               {/* Description */}
               <div className="flex-1 text-center lg:text-left lg:pr-10 lg:border-r border-gray-100">
                 <h2 className="font-bengali font-bold text-xl md:text-2xl text-dark mb-3 leading-tight">
                   প্রতিটি মেনু আমরা তৈরি করি রিসার্চ ও আপনার ভিশন বুঝে।
                 </h2>
-                <p className="font-bengali text-gray-500 text-base leading-relaxed">
+                <p className="font-bengali text-gray-500 text-sm md:text-base leading-relaxed">
                   আপনি যদি চান এমন একটি মেনু , যেটা ব্র্যান্ড কে রিপ্রেজেন্ট করবে এবং অন্যদের থেকে আলাদা রাখবে — তাহলে আমরা প্রস্তুত!
                 </p>
               </div>
 
               {/* Stats */}
-              <div className="flex justify-center items-center gap-12 lg:pl-4 shrink-0">
+              <div className="flex flex-row justify-center items-center gap-6 sm:gap-12 lg:pl-4 shrink-0 w-full lg:w-auto">
                 {/* Stat 1 */}
-                <div className="text-center">
-                  <h2 className="text-5xl md:text-6xl font-bold text-dark mb-2">৬৩৯</h2>
-                  <p className="font-bengali text-lg font-medium text-gray-600">Coverage Thana</p>
+                <div className="text-center px-4">
+                  <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-dark mb-1">৬৩৯</h2>
+                  <p className="font-bengali text-sm md:text-lg font-medium text-gray-600">Coverage Thana</p>
                 </div>
 
+                {/* Divider for mobile */}
+                <div className="w-px h-12 bg-gray-100 sm:hidden"></div>
+
                 {/* Stat 2 */}
-                <div className="text-center">
-                  <h2 className="text-5xl md:text-6xl font-bold text-dark mb-2">১৪+</h2>
-                  <p className="font-bengali text-lg font-medium text-gray-600">Coverage County</p>
+                <div className="text-center px-4">
+                  <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-dark mb-1">১৪+</h2>
+                  <p className="font-bengali text-sm md:text-lg font-medium text-gray-600">Coverage County</p>
                 </div>
               </div>
 
