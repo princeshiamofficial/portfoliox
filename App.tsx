@@ -13,6 +13,7 @@ import { BlogPage } from './components/pages/blog/blog-page';
 // Admin Imports
 import { AdminLogin } from './components/admin/pages/login/AdminLogin';
 import { AdminDashboard } from './components/admin/pages/AdminDashboard';
+import { AdminLayout } from './components/admin/layout/AdminLayout';
 
 // Wrapper to provide onBookMeeting functionality compatible with Router
 const ServicesPageWrapper = () => {
@@ -36,9 +37,14 @@ const App: React.FC = () => {
           <Route path="/refund" element={<RefundPolicy />} />
         </Route>
 
-        {/* Admin Routes */}
+        {/* Admin Auth (outside layout) */}
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin" element={<AdminDashboard />} />
+
+        {/* Admin Routes (with AdminLayout) */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+          {/* Add more admin routes here as needed */}
+        </Route>
       </Routes>
     </BrowserRouter>
   );
