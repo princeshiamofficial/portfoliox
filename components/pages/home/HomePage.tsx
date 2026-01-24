@@ -20,7 +20,9 @@ export const HomePage: React.FC = () => {
             <ProductShowreels />
             <OurDepartments />
             <OurServices />
-            <CoverageArea />
+            <div className="hidden md:block">
+                <CoverageArea />
+            </div>
             <YourJourney />
             <OwnerInfo />
         </div>

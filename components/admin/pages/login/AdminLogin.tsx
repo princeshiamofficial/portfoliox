@@ -1,45 +1,81 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Mail, Lock, Eye, EyeOff, Check } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff, Check, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export const AdminLogin: React.FC = () => {
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [rememberMe, setRememberMe] = useState(false);
+
+    const [error, setError] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        // In a real app, validation and auth logic goes here.
-        navigate('/admin');
+        setIsLoading(true);
+
+        // Simple authentication check
+        setTimeout(() => {
+            if (email === 'admin@colorhut.com' && password === 'admin123') {
+                localStorage.setItem('admin_auth', 'true');
+                navigate('/admin');
+            } else {
+                setError('Invalid credentials. Please try again.');
+                setIsLoading(false);
+                setTimeout(() => setError(''), 3000);
+            }
+        }, 800);
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center p-6 text-slate-900 bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#f8fafc] font-sans">
-            <div className="w-full max-w-[400px]">
-                {/* Logo */}
-                <div className="flex justify-center mb-8">
-                    <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center shadow-lg shadow-black/10">
-                        <div className="w-5 h-5 border-2 border-white rounded-sm rotate-45"></div>
-                    </div>
+        <div className="min-h-screen flex items-center justify-center p-6 bg-slate-50 font-sans selection:bg-orange-500/30 overflow-hidden relative">
+            {/* Background Decorative Elements */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div className="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-orange-200/20 rounded-full blur-[120px] animate-pulse"></div>
+                <div className="absolute bottom-[10%] right-[10%] w-[400px] h-[400px] bg-red-200/20 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }}></div>
+            </div>
+
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="w-full max-w-[440px] relative z-10"
+            >
+                {/* Logo & Header */}
+                <div className="text-center mb-10">
+                    <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
+                        className="inline-flex items-center justify-center w-20 h-20 rounded-[2rem] bg-gradient-to-br from-orange-500 to-red-600 shadow-2xl shadow-orange-600/20 mb-6"
+                    >
+                        <Lock className="text-white w-8 h-8" strokeWidth={2.5} />
+                    </motion.div>
+                    <h1 className="text-4xl font-black text-slate-900 tracking-tight mb-2">Welcome Back</h1>
+                    <p className="text-slate-500 font-medium">Secure Admin Access Only</p>
                 </div>
 
-                {/* Card */}
-                <div className="bg-white rounded-[2.5rem] p-10 border border-white shadow-[0_10px_25px_-5px_rgba(0,0,0,0.04),0_8px_10px_-6px_rgba(0,0,0,0.04)]">
-                    <header className="text-center mb-10">
-                        <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Color Hut Admin</h1>
-                        <p className="text-slate-500 text-sm mt-1 font-medium">Sign in to manage your portfolio</p>
-                    </header>
+                {/* Card Container */}
+                <div className="bg-white rounded-[2.5rem] p-10 border border-slate-200 shadow-2xl shadow-slate-200/50 relative overflow-hidden group">
+                    {/* Error Message */}
+                    {error && (
+                        <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            className="bg-red-50 border border-red-100 text-red-600 px-4 py-3 rounded-2xl text-xs font-bold text-center mb-6"
+                        >
+                            {error}
+                        </motion.div>
+                    )}
 
                     <form onSubmit={handleLogin} className="space-y-6">
-                        {/* Email */}
+                        {/* Email Field */}
                         <div className="space-y-2">
-                            <label className="text-[11px] font-bold text-slate-400 uppercase tracking-widest ml-1">
-                                Email Address
-                            </label>
-                            <div className="relative group">
-                                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-black transition-colors">
+                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Email Identity</label>
+                            <div className="relative group/input">
+                                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within/input:text-orange-500 transition-colors">
                                     <Mail className="w-5 h-5" />
                                 </div>
                                 <input
@@ -47,21 +83,17 @@ export const AdminLogin: React.FC = () => {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
-                                    className="w-full bg-[#fdfdfd] border border-[#e2e8f0] rounded-xl pl-12 pr-4 py-3.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-black focus:bg-white focus:shadow-[0_0_0_4px_rgba(0,0,0,0.03)] font-medium text-sm transition-all"
+                                    className="w-full bg-slate-50 border border-slate-200 rounded-2xl pl-12 pr-4 py-4 text-slate-900 placeholder-slate-300 focus:outline-none focus:border-orange-500/50 focus:ring-4 focus:ring-orange-500/5 font-medium transition-all"
                                     placeholder="admin@colorhut.com"
                                 />
                             </div>
                         </div>
 
-                        {/* Password */}
+                        {/* Password Field */}
                         <div className="space-y-2">
-                            <div className="flex justify-between items-center px-1">
-                                <label className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">
-                                    Password
-                                </label>
-                            </div>
-                            <div className="relative group">
-                                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-black transition-colors">
+                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Security Key</label>
+                            <div className="relative group/input">
+                                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within/input:text-orange-500 transition-colors">
                                     <Lock className="w-5 h-5" />
                                 </div>
                                 <input
@@ -69,58 +101,60 @@ export const AdminLogin: React.FC = () => {
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
-                                    className="w-full bg-[#fdfdfd] border border-[#e2e8f0] rounded-xl pl-12 pr-12 py-3.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-black focus:bg-white focus:shadow-[0_0_0_4px_rgba(0,0,0,0.03)] font-medium text-sm transition-all"
+                                    className="w-full bg-slate-50 border border-slate-200 rounded-2xl pl-12 pr-12 py-4 text-slate-900 placeholder-slate-300 focus:outline-none focus:border-orange-500/50 focus:ring-4 focus:ring-orange-500/5 font-medium transition-all"
                                     placeholder="••••••••"
                                 />
                                 <button
                                     type="button"
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-black transition-colors focus:outline-none"
+                                    className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-900 transition-colors"
                                 >
-                                    {!showPassword ? <Eye className="w-5 h-5" /> : <EyeOff className="w-5 h-5" />}
+                                    {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                                 </button>
                             </div>
                         </div>
 
-                        {/* Remember Me */}
-                        <div className="flex items-center group cursor-pointer w-fit">
-                            <div className="relative flex items-center">
-                                <input
-                                    type="checkbox"
-                                    id="rememberMe"
-                                    checked={rememberMe}
-                                    onChange={(e) => setRememberMe(e.target.checked)}
-                                    className="peer h-5 w-5 opacity-0 absolute cursor-pointer"
-                                />
-                                <div className="h-5 w-5 border-2 border-slate-200 rounded-md peer-checked:bg-black peer-checked:border-black transition-all flex items-center justify-center">
-                                    <Check className="w-3 h-3 text-white hidden peer-checked:block" strokeWidth={4} />
+                        {/* Actions */}
+                        <div className="flex items-center justify-between px-1">
+                            <label className="flex items-center gap-3 cursor-pointer group/check">
+                                <div className="relative flex items-center justify-center">
+                                    <input type="checkbox" className="peer absolute opacity-0 w-full h-full cursor-pointer" />
+                                    <div className="w-5 h-5 border-2 border-slate-200 rounded-lg group-hover/check:border-slate-300 transition-colors peer-checked:bg-orange-500 peer-checked:border-orange-500 flex items-center justify-center">
+                                        <Check size={12} className="text-white font-bold" strokeWidth={4} />
+                                    </div>
                                 </div>
-                                <label
-                                    htmlFor="rememberMe"
-                                    className="ml-3 text-sm text-slate-500 font-medium cursor-pointer group-hover:text-slate-800 transition-colors"
-                                >
-                                    Remember Me
-                                </label>
-                            </div>
+                                <span className="text-sm text-slate-500 font-medium group-hover/check:text-slate-800 transition-all">Keep me locked in</span>
+                            </label>
+                            <button type="button" className="text-xs font-bold text-slate-500 hover:text-orange-500 transition-colors">Reset Key?</button>
                         </div>
 
-                        {/* Submit Button */}
+                        {/* Sign In Button */}
                         <button
                             type="submit"
-                            className="w-full bg-slate-900 text-white font-semibold py-4 rounded-xl hover:bg-black hover:shadow-xl hover:shadow-black/10 active:scale-[0.98] transition-all duration-200"
+                            disabled={isLoading}
+                            className="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold py-4 rounded-2xl shadow-xl shadow-orange-600/20 hover:shadow-orange-600/40 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 group"
                         >
-                            Sign In
+                            {isLoading ? (
+                                <div className="w-5 h-5 border-3 border-white/20 border-t-white rounded-full animate-spin"></div>
+                            ) : (
+                                <>
+                                    <span>Access Panel</span>
+                                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                                </>
+                            )}
                         </button>
                     </form>
                 </div>
 
-                {/* Footer */}
-                <div className="mt-8 text-center">
-                    <span className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.3em]">
-                        Color Hut &copy; 2026
-                    </span>
+                {/* Dashboard Footer Info */}
+                <div className="mt-10 text-center space-y-4">
+                    <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.4em]">Color Hut Systems &bull; v2.0</p>
+                    <div className="flex justify-center gap-4">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
+                        <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Network Secure</span>
+                    </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 };
