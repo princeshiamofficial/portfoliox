@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,11 +17,11 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#', hasDropdown: false },
-    { name: 'Services', href: '#services', hasDropdown: false },
-    { name: 'About Us', href: '#services', hasDropdown: false },
-    { name: 'Contact Us', href: '#services', hasDropdown: false },
-    { name: 'Blog', href: '#services', hasDropdown: false },
+    { name: 'Home', href: '/', hasDropdown: false },
+    { name: 'Services', href: '/services', hasDropdown: false },
+    { name: 'About Us', href: '/about', hasDropdown: false },
+    { name: 'Contact Us', href: '/contact', hasDropdown: false },
+    { name: 'Blog', href: '/blog', hasDropdown: false },
   ];
 
   return (
@@ -31,36 +33,36 @@ export const Navbar: React.FC = () => {
           }`}
       >
         {/* Logo */}
-        <a href="/" className="flex-shrink-0">
+        <Link to="/" className="flex-shrink-0">
           <img
             src="https://colorhutbd.xyz/image/logo.png"
             alt="Xtrecy Logo"
             className="h-10 md:h-11 w-auto object-contain"
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-gray-600">
           {navLinks.map((link) => (
             <div key={link.name} className="relative group h-full flex items-center">
-              <a
-                href={link.href}
-                className={`flex items-center gap-1 py-2 hover:text-primary transition-colors ${link.name === 'Services' ? 'text-primary' : ''
+              <Link
+                to={link.href}
+                className={`flex items-center gap-1 py-2 hover:text-primary transition-colors ${location.pathname === link.href ? 'text-primary' : ''
                   }`}
               >
                 {link.name}
                 {link.hasDropdown && (
                   <ChevronDown className="w-3 h-3 opacity-60 group-hover:rotate-180 transition-transform duration-300" />
                 )}
-              </a>
+              </Link>
 
               {link.hasDropdown && (
                 <div className="absolute top-full left-0 w-64 pt-4 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
                   <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-2 overflow-hidden">
                     {['Graphics Design', 'Facebook Marketing', 'Packaging', 'Website Development'].map((item) => (
-                      <a key={item} href="#" className="block px-5 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary transition-colors">
+                      <Link key={item} to="/services" className="block px-5 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary transition-colors">
                         {item}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -71,9 +73,9 @@ export const Navbar: React.FC = () => {
 
         {/* Desktop CTA */}
         <div className="hidden lg:block">
-          <a href="#meeting" className="bg-primary hover:bg-primary-dark text-white px-7 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-block">
+          <Link to="/meeting" className="bg-primary hover:bg-primary-dark text-white px-7 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-block">
             Sign up
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -96,22 +98,22 @@ export const Navbar: React.FC = () => {
             className="fixed inset-0 bg-white z-40 lg:hidden flex flex-col pt-24 px-6 gap-4 pointer-events-auto"
           >
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className="border-b border-gray-100 pb-3 text-lg font-medium text-gray-800"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#meeting"
+            <Link
+              to="/meeting"
               className="bg-primary text-white text-center px-6 py-3 rounded-lg mt-4 font-semibold"
               onClick={() => setMobileMenuOpen(false)}
             >
               Sign up
-            </a>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
