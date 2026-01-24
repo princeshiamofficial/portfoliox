@@ -13,7 +13,7 @@ export const ContactForm: React.FC = () => {
   });
 
   // PASTE YOUR GOOGLE APPS SCRIPT URL HERE
-  const SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwLA9KyU8aIwQ33rDSTkhgyFxxIP5NH_voe4Da1W3kuF13SyMrlvHw042sz58Jn1GZv/exec";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
