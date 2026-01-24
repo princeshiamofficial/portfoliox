@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { SectionHeader } from '../../../shared/SectionHeader';
 import { Plus, Eye } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const RESTAURANT_IMAGES = [
   "https://colorhutbd.xyz/image/restaurant/R1.webp",
@@ -26,6 +27,7 @@ const PARLOUR_IMAGES = [
 ];
 
 export const PortfolioSection: React.FC = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('Restaurant');
 
   const getImages = () => {
@@ -44,7 +46,7 @@ export const PortfolioSection: React.FC = () => {
 
   const handleTabClick = (tab: string) => {
     if (tab === 'More+') {
-      window.open('https://menu.colorhutbd.xyz', '_blank');
+      navigate('/services#requirment');
     } else {
       setActiveTab(tab);
     }
