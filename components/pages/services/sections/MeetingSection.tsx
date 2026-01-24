@@ -60,10 +60,10 @@ export const MeetingSection: React.FC<MeetingSectionProps> = ({ onBookMeeting })
                         <div className="w-full lg:w-[45%] bg-[#fff7ed] p-10 md:p-16 flex flex-col justify-center relative z-20">
                             <div className="max-w-lg mx-auto lg:mx-0">
                                 {/* Live Badge */}
-                                <div className="flex items-center gap-3 mb-5">
-                                    <div className="w-4 h-4 bg-[#ea580c] rounded-full animate-pulse"></div>
-                                    <span className="text-[28px] md:text-[32px] font-bold text-[#111827] tracking-tight font-sans leading-none">Live</span>
-                                </div>
+                                {/*<div className="flex items-center gap-3 mb-5">*/}
+                                {/*<div className="w-4 h-4 bg-[#ea580c] rounded-full animate-pulse"></div>*/}
+                                {/*<span className="text-[28px] md:text-[32px] font-bold text-[#111827] tracking-tight font-sans leading-none">Live</span>*/}
+                                {/*</div>*/}
 
                                 {/* Title */}
                                 <h2 className="font-bengali text-[32px] md:text-[42px] font-bold text-[#ea580c] mb-6 leading-[1.2]">
