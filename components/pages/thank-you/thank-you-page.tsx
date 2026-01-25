@@ -75,7 +75,7 @@ export const ThankYouPage: React.FC = () => {
                     transition={{ delay: 0.8 }}
                     className="mt-12 text-gray-400 text-sm font-medium"
                 >
-                    জরুরী প্রয়োজনে কল করুন: <a href="tel:01919760626" className="text-dark font-bold hover:text-primary transition-colors">০১৯১৯-৭৬০৬২৬</a>
+                    জরুরী প্রয়োজনে কল করুন: <a href="tel:+8801919760626" className="text-dark font-bold hover:text-primary transition-colors">+৮৮০ ১৯১৯-৭৬০৬২৬</a>
                 </motion.p>
             </div>
         </div>
