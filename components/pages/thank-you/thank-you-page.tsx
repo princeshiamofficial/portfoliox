@@ -75,7 +75,7 @@ export const ThankYouPage: React.FC = () => {
                     transition={{ delay: 0.8 }}
                     className="mt-12 text-gray-400 text-sm font-medium"
                 >
-                    জরুরী প্রয়োজনে কল করুন: <span className="text-dark font-bold">০১৮০০-০০০০০০</span>
+                    জরুরী প্রয়োজনে কল করুন: <span className="text-dark font-bold">০১৯১৯-৭৬০৬২৬</span>
                 </motion.p>
             </div>
         </div>
