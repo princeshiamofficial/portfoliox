@@ -132,14 +132,14 @@ export const ContactForm: React.FC = () => {
 
             <div className="group">
               <label className="block font-bengali text-gray-700 text-sm font-medium mb-1.5 group-focus-within:text-primary transition-colors">নোট (ঐচ্ছিক)</label>
-              <textarea
+              <input
+                type="text"
                 name="note"
                 value={formData.note}
                 onChange={handleChange}
-                rows={3}
-                className="w-full bg-light/50 border border-gray-100 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all shadow-sm resize-none"
+                className="w-full bg-light/50 border border-gray-100 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all shadow-sm"
                 placeholder="আপনার রিকোয়ারমেন্টস এখানে লিখুন..."
-              ></textarea>
+              />
             </div>
 
             <div className="pt-2">
