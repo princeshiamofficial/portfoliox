@@ -101,6 +101,7 @@ export const ContactForm: React.FC = () => {
                   name="designation"
                   value={formData.designation}
                   onChange={handleChange}
+                  required
                   className="w-full bg-light/50 border border-gray-100 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all shadow-sm"
                   placeholder="Ex: মালিক, ম্যানেজার"
                 />
@@ -112,6 +113,7 @@ export const ContactForm: React.FC = () => {
                   name="businessType"
                   value={formData.businessType}
                   onChange={handleChange}
+                  required
                   className="w-full bg-light/50 border border-gray-100 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all shadow-sm"
                   placeholder="Ex: রেস্টুরেন্ট, পার্লার"
                 />
@@ -125,6 +127,7 @@ export const ContactForm: React.FC = () => {
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
+                required
                 className="w-full bg-light/50 border border-gray-100 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all shadow-sm"
                 placeholder="আপনার ঠিকানা লিখুন..."
               />
