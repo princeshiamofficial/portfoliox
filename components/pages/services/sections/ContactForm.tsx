@@ -1,26 +1,33 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Send, Loader2 } from 'lucide-react';
+import { Send, Loader2, ChevronDown, Check } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export const ContactForm: React.FC = () => {
   const navigate = useNavigate();
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    designation: '',
     businessType: '',
-    address: '',
     note: ''
   });
 
   // GOOGLE APPS SCRIPT URL
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwLA9KyU8aIwQ33rDSTkhgyFxxIP5NH_voe4Da1W3kuF13SyMrlvHw042sz58Jn1GZv/exec";
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
+
+  const handleSelectChange = (value: string) => {
+    setFormData(prev => ({ ...prev, businessType: value }));
+    setIsDropdownOpen(false);
+  };
+
+  const businessTypes = ["রেস্টুরেন্ট", "পার্লার", "অন্যান্য"];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -66,7 +73,7 @@ export const ContactForm: React.FC = () => {
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-orange-400 to-primary"></div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="grid grid-cols-1 gap-5">
+            <div className="space-y-5">
               <div className="group">
                 <label className="block font-bengali text-gray-700 text-sm font-medium mb-1.5 group-focus-within:text-primary transition-colors">আপনার নাম</label>
                 <input
@@ -79,58 +86,58 @@ export const ContactForm: React.FC = () => {
                   placeholder="Ex: আব্দুল আউয়াল"
                 />
               </div>
-              <div className="group">
-                <label className="block font-bengali text-gray-700 text-sm font-medium mb-1.5 group-focus-within:text-primary transition-colors">ফোন নাম্বার</label>
-                <input
-                  type="text"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-light/50 border border-gray-100 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all shadow-sm"
-                  placeholder="Ex: 01800000000"
-                />
-              </div>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div className="group">
-                <label className="block font-bengali text-gray-700 text-sm font-medium mb-1.5 group-focus-within:text-primary transition-colors">পদবি</label>
-                <input
-                  type="text"
-                  name="designation"
-                  value={formData.designation}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-light/50 border border-gray-100 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all shadow-sm"
-                  placeholder="Ex: মালিক, ম্যানেজার"
-                />
-              </div>
-              <div className="group">
-                <label className="block font-bengali text-gray-700 text-sm font-medium mb-1.5 group-focus-within:text-primary transition-colors">ব্যবসার ধরন</label>
-                <input
-                  type="text"
-                  name="businessType"
-                  value={formData.businessType}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-light/50 border border-gray-100 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all shadow-sm"
-                  placeholder="Ex: রেস্টুরেন্ট, পার্লার"
-                />
-              </div>
-            </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="group">
+                  <label className="block font-bengali text-gray-700 text-sm font-medium mb-1.5 group-focus-within:text-primary transition-colors">ফোন নাম্বার</label>
+                  <input
+                    type="text"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-light/50 border border-gray-100 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all shadow-sm"
+                    placeholder="Ex: 01800000000"
+                  />
+                </div>
+                <div className="group">
+                  <label className="block font-bengali text-gray-700 text-sm font-medium mb-1.5 group-focus-within:text-primary transition-colors">ব্যবসার ধরন</label>
+                  <div className="relative">
+                    <div
+                      className={`w-full bg-light/50 border ${isDropdownOpen ? 'border-primary ring-4 ring-primary/10' : 'border-gray-100'} rounded-xl px-4 py-3 cursor-pointer flex justify-between items-center transition-all shadow-sm group-hover:border-primary/50`}
+                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    >
+                      <span className={`font-bengali ${formData.businessType ? 'text-gray-900' : 'text-gray-400'}`}>
+                        {formData.businessType || "নির্বাচন করুন"}
+                      </span>
+                      <ChevronDown size={20} className={`text-gray-400 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                    </div>
 
-            <div className="group">
-              <label className="block font-bengali text-gray-700 text-sm font-medium mb-1.5 group-focus-within:text-primary transition-colors">ঠিকানা</label>
-              <input
-                type="text"
-                name="address"
-                value={formData.address}
-                onChange={handleChange}
-                required
-                className="w-full bg-light/50 border border-gray-100 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all shadow-sm"
-                placeholder="আপনার ঠিকানা লিখুন..."
-              />
+                    <AnimatePresence>
+                      {isDropdownOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-100 rounded-xl shadow-xl z-50 overflow-hidden"
+                        >
+                          {businessTypes.map((type) => (
+                            <div
+                              key={type}
+                              className="px-4 py-3 hover:bg-primary/5 cursor-pointer font-bengali flex justify-between items-center transition-colors text-gray-700 hover:text-primary"
+                              onClick={() => handleSelectChange(type)}
+                            >
+                              {type}
+                              {formData.businessType === type && <Check size={16} className="text-primary" />}
+                            </div>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="group">
