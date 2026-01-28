@@ -7,7 +7,7 @@ import { PrivacyPolicy } from './components/pages/privacy/privacy-page';
 import { RefundPolicy } from './components/pages/refund/refund-page';
 import { ServicesPage } from './components/pages/services/services-page';
 import { AboutPage } from './components/pages/about/about-page';
-import { ContactPage } from './components/pages/contact/contact-page';
+
 import { ContactUsPage } from './components/pages/contact-us/ContactUsPage';
 import { BlogPage } from './components/pages/blog/blog-page';
 import { ThankYouPage } from './components/pages/thank-you/thank-you-page';
@@ -34,7 +34,7 @@ const App: React.FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPageWrapper />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
+
           <Route path="/contact-us" element={<ContactUsPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/meeting" element={<MeetingPage />} />
