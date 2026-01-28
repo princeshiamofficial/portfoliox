@@ -12,19 +12,21 @@ import { OwnerInfo } from './sections/OwnerInfo';
 
 export const HomePage: React.FC = () => {
     return (
-        <div className="bg-[#050505] text-white overflow-hidden font-system text-center md:text-left">
-            <HeroSlideshow />
-            <HomeLogos />
-            <CustomerReviews />
-            <CustomerVideoReviews />
-            <ProductShowreels />
-            <OurDepartments />
-            <OurServices />
-            <div className="hidden md:block">
-                <CoverageArea />
+        <div className="min-h-screen bg-gray-50 pt-20">
+            <div className="bg-[#050505] text-white overflow-hidden font-system text-center md:text-left">
+                <HeroSlideshow />
+                <HomeLogos />
+                <CustomerReviews />
+                <CustomerVideoReviews />
+                <ProductShowreels />
+                <OurDepartments />
+                <OurServices />
+                <div className="hidden md:block">
+                    <CoverageArea />
+                </div>
+                <YourJourney />
+                <OwnerInfo />
             </div>
-            <YourJourney />
-            <OwnerInfo />
         </div>
     );
 };

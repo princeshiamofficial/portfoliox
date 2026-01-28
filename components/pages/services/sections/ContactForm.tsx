@@ -19,7 +19,12 @@ export const ContactForm: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    if (name === 'phone') {
+      const numericValue = value.replace(/\D/g, '');
+      setFormData(prev => ({ ...prev, [name]: numericValue }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSelectChange = (value: string) => {
@@ -33,6 +38,11 @@ export const ContactForm: React.FC = () => {
     e.preventDefault();
     if (!SCRIPT_URL || SCRIPT_URL.includes("YOUR_GOOGLE_APPS_SCRIPT_URL")) {
       alert("Please configure the Google Apps Script URL in ContactForm.tsx");
+      return;
+    }
+
+    if (!formData.businessType) {
+      alert("দয়া করে ব্যবসার ধরন নির্বাচন করুন");
       return;
     }
 
@@ -91,11 +101,13 @@ export const ContactForm: React.FC = () => {
                 <div className="group">
                   <label className="block font-bengali text-gray-700 text-sm font-medium mb-1.5 group-focus-within:text-primary transition-colors">ফোন নাম্বার</label>
                   <input
-                    type="text"
+                    type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
                     required
+                    inputMode="numeric"
+                    pattern="[0-9]*"
                     className="w-full bg-light/50 border border-gray-100 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all shadow-sm"
                     placeholder="Ex: 01800000000"
                   />

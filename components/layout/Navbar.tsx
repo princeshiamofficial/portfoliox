@@ -20,7 +20,7 @@ export const Navbar: React.FC = () => {
     { name: 'Home', href: '/', hasDropdown: false },
     { name: 'Services', href: '/services', hasDropdown: false },
     { name: 'About Us', href: '/about', hasDropdown: false },
-    { name: 'Contact Us', href: '/contact', hasDropdown: false },
+    { name: 'Contact Us', href: '/contact-us', hasDropdown: false },
     { name: 'Blog', href: '/blog', hasDropdown: false },
   ];
 
