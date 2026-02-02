@@ -24,7 +24,7 @@
             "keywords": "creative services, brand identity design, web app development, digital marketing strategy, video production, professional photography, customer support",
             "ogTitle": "Premium Creative Services - Color Hut",
             "ogDescription": "From brand identity to digital marketing, we offer complete creative solutions for your business growth.",
-            "canonical": "https://colorhut.com/services"
+            "canonical": "https://colorhut.com/services/"
         },
         "meeting": {
             "title": "Book a Meeting | Color Hut Creative Consultation",
@@ -32,7 +32,7 @@
             "keywords": "book consultation, creative consultation, project discussion, free meeting, business consultation",
             "ogTitle": "Book Your Free Consultation - Color Hut",
             "ogDescription": "Get expert advice on your creative projects. Schedule a meeting with our team today.",
-            "canonical": "https://colorhut.com/meeting"
+            "canonical": "https://colorhut.com/meeting/"
         },
         "privacy": {
             "title": "Privacy Policy | Color Hut Creative Agency",
@@ -40,7 +40,7 @@
             "keywords": "privacy policy, data protection, personal information, GDPR compliance",
             "ogTitle": "Privacy Policy - Color Hut",
             "ogDescription": "Your privacy matters. Learn how we protect your data and respect your privacy.",
-            "canonical": "https://colorhut.com/privacy"
+            "canonical": "https://colorhut.com/privacy/"
         },
         "refund": {
             "title": "Refund Policy | Color Hut Terms & Conditions",
@@ -48,7 +48,7 @@
             "keywords": "refund policy, cancellation policy, terms and conditions, payment terms",
             "ogTitle": "Refund Policy - Color Hut",
             "ogDescription": "Transparent refund and cancellation terms for all our creative services.",
-            "canonical": "https://colorhut.com/refund"
+            "canonical": "https://colorhut.com/refund/"
         }
     },
     "departments": [

@@ -32,15 +32,15 @@ const App: React.FC = () => {
         {/* Public Website Routes */}
         <Route element={<BaseLayout />}>
           <Route path="/" element={<HomePage />} />
-          <Route path="/services" element={<ServicesPageWrapper />} />
-          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services/" element={<ServicesPageWrapper />} />
+          <Route path="/about/" element={<AboutPage />} />
 
-          <Route path="/contact-us" element={<ContactUsPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/meeting" element={<MeetingPage />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/refund" element={<RefundPolicy />} />
-          <Route path="/thank-you" element={<ThankYouPage />} />
+          <Route path="/contact-us/" element={<ContactUsPage />} />
+          <Route path="/blog/" element={<BlogPage />} />
+          <Route path="/meeting/" element={<MeetingPage />} />
+          <Route path="/privacy/" element={<PrivacyPolicy />} />
+          <Route path="/refund/" element={<RefundPolicy />} />
+          <Route path="/thank-you/" element={<ThankYouPage />} />
         </Route>
 
         {/* Admin Auth (outside layout) */}

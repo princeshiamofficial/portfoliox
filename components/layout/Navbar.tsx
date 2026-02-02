@@ -18,10 +18,10 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', href: '/', hasDropdown: false },
-    { name: 'Services', href: '/services', hasDropdown: false },
-    { name: 'About Us', href: '/about', hasDropdown: false },
-    { name: 'Contact Us', href: '/contact-us', hasDropdown: false },
-    { name: 'Blog', href: '/blog', hasDropdown: false },
+    { name: 'Services', href: '/services/', hasDropdown: false },
+    { name: 'About Us', href: '/about/', hasDropdown: false },
+    { name: 'Contact Us', href: '/contact-us/', hasDropdown: false },
+    { name: 'Blog', href: '/blog/', hasDropdown: false },
   ];
 
   return (
