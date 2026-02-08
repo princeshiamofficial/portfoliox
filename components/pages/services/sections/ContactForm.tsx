@@ -62,7 +62,7 @@ export const ContactForm: React.FC = () => {
       setStatus('success');
 
       // Redirect to Thank You page
-      navigate('/thank-you');
+      navigate('/thank-you/');
 
     } catch (error) {
       console.error('Error!', error);
