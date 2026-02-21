@@ -9,7 +9,7 @@ import { ServicesPage } from './components/pages/services/services-page';
 import { AboutPage } from './components/pages/about/about-page';
 
 import { ContactUsPage } from './components/pages/contact-us/ContactUsPage';
-import { BlogPage } from './components/pages/blog/blog-page';
+import { LuckyDrawPage } from './components/pages/luckydraw/luckydraw-page';
 import { ThankYouPage } from './components/pages/thank-you/thank-you-page';
 import ScrollToTop from './components/shared/ScrollToTop';
 
@@ -36,7 +36,7 @@ const App: React.FC = () => {
           <Route path="/about/" element={<AboutPage />} />
 
           <Route path="/contact-us/" element={<ContactUsPage />} />
-          <Route path="/blog/" element={<BlogPage />} />
+          <Route path="/luckydraw/" element={<LuckyDrawPage />} />
           <Route path="/meeting/" element={<MeetingPage />} />
           <Route path="/privacy/" element={<PrivacyPolicy />} />
           <Route path="/refund/" element={<RefundPolicy />} />
