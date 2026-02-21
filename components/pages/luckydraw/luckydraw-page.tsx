@@ -8,33 +8,34 @@ export const LuckyDrawPage: React.FC = () => {
     const [isPlaying, setIsPlaying] = React.useState(false);
     const audioRef = React.useRef<HTMLAudioElement | null>(null);
 
-    const startMusic = React.useCallback(() => {
-        if (audioRef.current && !isPlaying) {
-            audioRef.current.play().then(() => {
-                setIsPlaying(true);
-                removeListeners();
-            }).catch(err => {
-                console.log("Waiting for first interaction...");
-            });
-        }
-    }, [isPlaying]);
-
-    const removeListeners = React.useCallback(() => {
-        window.removeEventListener('click', startMusic);
-        window.removeEventListener('scroll', startMusic);
-        window.removeEventListener('touchstart', startMusic);
-        window.removeEventListener('mousemove', startMusic);
-    }, [startMusic]);
-
     React.useEffect(() => {
         const audio = new Audio('/music.mp3');
         audio.loop = true;
         audioRef.current = audio;
 
-        // Try playing instantly
+        const startMusic = () => {
+            if (audioRef.current && !isPlaying) {
+                audioRef.current.play().then(() => {
+                    setIsPlaying(true);
+                    // Remove all listeners once playing
+                    removeListeners();
+                }).catch(err => {
+                    console.log("Waiting for interaction...");
+                });
+            }
+        };
+
+        const removeListeners = () => {
+            window.removeEventListener('click', startMusic);
+            window.removeEventListener('scroll', startMusic);
+            window.removeEventListener('touchstart', startMusic);
+            window.removeEventListener('mousemove', startMusic);
+        };
+
+        // Try to play immediately
         startMusic();
 
-        // Listen for any interaction
+        // Add multiple listeners to capture any user activity
         window.addEventListener('click', startMusic);
         window.addEventListener('scroll', startMusic);
         window.addEventListener('touchstart', startMusic);
@@ -44,7 +45,7 @@ export const LuckyDrawPage: React.FC = () => {
             audio.pause();
             removeListeners();
         };
-    }, [startMusic, removeListeners]);
+    }, []);
 
     const toggleMusic = () => {
         if (audioRef.current) {
@@ -76,11 +77,12 @@ export const LuckyDrawPage: React.FC = () => {
         }
 
         try {
+            // Replace this URL with your Google Apps Script Web App URL
             const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx5dGB2FxLPxeZBd3fqGWXb1h2eBa-km5i1FgoEg127beZRZz69PnPpoyHlysVDCSsn/exec';
 
             await fetch(SCRIPT_URL, {
                 method: 'POST',
-                mode: 'no-cors',
+                mode: 'no-cors', // Apps Script requires no-cors for simple redirect handling
                 cache: 'no-cache',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
@@ -100,19 +102,26 @@ export const LuckyDrawPage: React.FC = () => {
         <div className="min-h-screen bg-white font-bengali selection:bg-red-600 selection:text-white">
             {/* Hero Section */}
             <section className="relative overflow-hidden pt-32 pb-12 md:pt-48 md:pb-16">
+                {/* Artistic Background Illustration Overlay - Stylized Shaheed Minar */}
                 <div className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none flex items-center justify-center overflow-hidden">
                     <svg viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[120%] h-auto max-w-none transform -rotate-3 translate-y-20">
+                        {/* Main Pillar */}
                         <rect x="375" y="100" width="50" height="400" rx="4" fill="currentColor" />
+                        {/* Side Pillars */}
                         <rect x="290" y="200" width="40" height="300" rx="4" fill="currentColor" />
                         <rect x="470" y="200" width="40" height="300" rx="4" fill="currentColor" />
+                        {/* Outer Pillars */}
                         <rect x="215" y="280" width="35" height="220" rx="4" fill="currentColor" />
                         <rect x="550" y="280" width="35" height="220" rx="4" fill="currentColor" />
+                        {/* Base */}
                         <rect x="150" y="500" width="500" height="20" rx="4" fill="currentColor" />
+                        {/* Sun/Aura */}
                         <circle cx="400" cy="180" r="120" stroke="currentColor" strokeWidth="2" strokeDasharray="10 10" />
                         <circle cx="400" cy="180" r="80" fill="currentColor" fillOpacity="0.2" />
                     </svg>
                 </div>
 
+                {/* Subtle Red Gradient Overlay */}
                 <div className="absolute inset-x-0 top-0 h-64 z-0 bg-gradient-to-b from-red-50 to-transparent pointer-events-none opacity-60"></div>
 
                 <div className="container mx-auto px-4 relative z-10 text-center">
@@ -152,6 +161,7 @@ export const LuckyDrawPage: React.FC = () => {
                 </div>
             </section>
 
+            {/* Campaign Info Section */}
             <section className="py-12 md:py-16 relative overflow-hidden bg-gray-50/30">
                 <div className="container mx-auto px-4 relative z-10 text-center mb-10">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">ক্যাম্পেইন সম্পর্কে তথ্য</h2>
@@ -187,6 +197,7 @@ export const LuckyDrawPage: React.FC = () => {
                 </div>
             </section>
 
+            {/* Registration Form Section */}
             <section id="register" className="py-12 md:py-20 bg-white relative">
                 <div className="container mx-auto px-4">
                     <div className="max-w-2xl mx-auto">
@@ -312,6 +323,7 @@ export const LuckyDrawPage: React.FC = () => {
                 </div>
             </section>
 
+            {/* Footer */}
             <footer className="py-12 bg-white border-t border-gray-100">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-10">
@@ -335,6 +347,7 @@ export const LuckyDrawPage: React.FC = () => {
                 </div>
             </footer>
 
+            {/* Music Toggle Button */}
             <motion.button
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
@@ -368,12 +381,11 @@ const InfoCard = ({ icon, title, description, delay }: { icon: React.ReactNode, 
         whileHover={{ y: -10 }}
         className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:border-red-50 transition-all duration-500 text-center"
     >
-        <div className="flex justify-center mb-6">{icon}</div>
+        <div className="flex justify-center mb-6 transform transition-transform duration-500 group-hover:scale-110">{icon}</div>
         <h3 className="text-2xl font-bold text-gray-900 mb-4">{title}</h3>
         <p className="text-gray-500 leading-relaxed font-light">{description}</p>
     </motion.div>
 );
-
 const SocialLink = ({ href, icon }: { href: string, icon: React.ReactNode }) => (
     <a
         href={href}
