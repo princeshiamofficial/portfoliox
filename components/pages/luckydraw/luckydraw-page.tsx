@@ -20,7 +20,7 @@ export const LuckyDrawPage: React.FC = () => {
 
         try {
             // Replace this URL with your Google Apps Script Web App URL
-            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx4aYxEjyT5RLw6CDIzfOz0texXXQ_iTwhqIlhn0EZ-ZhhqlG2LUJtbEVUJ0M2MM2gr/exec';
+            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx5dGB2FxLPxeZBd3fqGWXb1h2eBa-km5i1FgoEg127beZRZz69PnPpoyHlysVDCSsn/exec';
 
             await fetch(SCRIPT_URL, {
                 method: 'POST',
