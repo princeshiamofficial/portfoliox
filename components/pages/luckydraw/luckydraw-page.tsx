@@ -12,11 +12,17 @@ export const LuckyDrawPage: React.FC = () => {
 
         const formData = new FormData(e.currentTarget);
         const data = {
-            name: formData.get('name'),
-            whatsapp: formData.get('whatsapp'),
-            division: formData.get('division'),
-            regional_text: formData.get('regional_text'),
+            name: formData.get('name')?.toString().trim(),
+            whatsapp: formData.get('whatsapp')?.toString().trim(),
+            division: formData.get('division')?.toString().trim(),
+            regional_text: formData.get('regional_text')?.toString().trim(),
         };
+
+        if (!data.name || !data.whatsapp || !data.division || !data.regional_text) {
+            alert('অনুগ্রহ করে সকল তথ্য সঠিক ভাবে প্রদান করুন।');
+            setIsSubmitting(false);
+            return;
+        }
 
         try {
             // Replace this URL with your Google Apps Script Web App URL
