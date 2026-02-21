@@ -1,30 +1,62 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Trophy, Users, Globe, PlayCircle, Share2, Facebook, Instagram, Twitter, Linkedin, MapPin, Send } from 'lucide-react';
+import { Trophy, Users, Globe, PlayCircle, Share2, Facebook, Instagram, Twitter, Linkedin, MapPin, Send, Music, VolumeX } from 'lucide-react';
 
 export const LuckyDrawPage: React.FC = () => {
     const [isSubmitting, setIsSubmitting] = React.useState(false);
     const [isSuccess, setIsSuccess] = React.useState(false);
+    const [isPlaying, setIsPlaying] = React.useState(false);
+    const audioRef = React.useRef<HTMLAudioElement | null>(null);
+
     React.useEffect(() => {
         const audio = new Audio('/music.mp3');
         audio.loop = true;
+        audioRef.current = audio;
 
-        const playAudio = () => {
-            audio.play().catch(err => {
-                console.log("Autoplay blocked. Waiting for user interaction.");
-            });
+        const startMusic = () => {
+            if (audioRef.current && !isPlaying) {
+                audioRef.current.play().then(() => {
+                    setIsPlaying(true);
+                    // Remove all listeners once playing
+                    removeListeners();
+                }).catch(err => {
+                    console.log("Waiting for interaction...");
+                });
+            }
         };
 
-        playAudio();
+        const removeListeners = () => {
+            window.removeEventListener('click', startMusic);
+            window.removeEventListener('scroll', startMusic);
+            window.removeEventListener('touchstart', startMusic);
+            window.removeEventListener('mousemove', startMusic);
+        };
 
-        // Fallback for browsers that block autoplay
-        window.addEventListener('click', playAudio, { once: true });
+        // Try to play immediately
+        startMusic();
+
+        // Add multiple listeners to capture any user activity
+        window.addEventListener('click', startMusic);
+        window.addEventListener('scroll', startMusic);
+        window.addEventListener('touchstart', startMusic);
+        window.addEventListener('mousemove', startMusic);
 
         return () => {
             audio.pause();
-            window.removeEventListener('click', playAudio);
+            removeListeners();
         };
     }, []);
+
+    const toggleMusic = () => {
+        if (audioRef.current) {
+            if (isPlaying) {
+                audioRef.current.pause();
+            } else {
+                audioRef.current.play();
+            }
+            setIsPlaying(!isPlaying);
+        }
+    };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -315,6 +347,27 @@ export const LuckyDrawPage: React.FC = () => {
                 </div>
             </footer>
 
+            {/* Music Toggle Button */}
+            <motion.button
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={toggleMusic}
+                className="fixed bottom-8 right-8 z-50 w-14 h-14 bg-white shadow-2xl rounded-full flex items-center justify-center border border-red-100 text-red-600 hover:bg-red-50 transition-colors"
+                title={isPlaying ? "মিউজিক বন্ধ করুন" : "মিউজিক চালু করুন"}
+            >
+                {isPlaying ? (
+                    <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                    >
+                        <Music className="w-6 h-6" />
+                    </motion.div>
+                ) : (
+                    <VolumeX className="w-6 h-6" />
+                )}
+            </motion.button>
         </div>
     );
 };
