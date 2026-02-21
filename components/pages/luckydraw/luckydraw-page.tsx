@@ -43,7 +43,7 @@ export const LuckyDrawPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-white font-bengali selection:bg-red-600 selection:text-white">
             {/* Hero Section */}
-            <section className="relative overflow-hidden pt-32 pb-20 md:pt-48 md:pb-32">
+            <section className="relative overflow-hidden pt-32 pb-12 md:pt-48 md:pb-16">
                 {/* Artistic Background Illustration Overlay - Stylized Shaheed Minar */}
                 <div className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none flex items-center justify-center overflow-hidden">
                     <svg viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[120%] h-auto max-w-none transform -rotate-3 translate-y-20">
@@ -73,10 +73,10 @@ export const LuckyDrawPage: React.FC = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 1, ease: "easeOut" }}
                     >
-                        <span className="inline-block px-4 py-1.5 bg-red-50 text-red-600 rounded-full text-sm font-bold mb-6 tracking-wider uppercase">
+                        <span className="inline-block px-4 py-1.5 bg-red-50 text-red-600 rounded-full text-sm font-bold mb-4 tracking-wider uppercase">
                             ভাষার মাস ২০২৬
                         </span>
-                        <h1 className="text-5xl md:text-8xl font-bold text-gray-900 mb-8 leading-[1.1]">
+                        <h1 className="text-5xl md:text-8xl font-bold text-gray-900 mb-6 leading-[1.1]">
                             মায়ের ভাষা, <br className="hidden md:block" />
                             <span className="text-red-600 relative">
                                 বাংলা ভাষা
@@ -85,7 +85,7 @@ export const LuckyDrawPage: React.FC = () => {
                                 </svg>
                             </span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-gray-500 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                        <p className="text-xl md:text-2xl text-gray-500 mb-8 max-w-2xl mx-auto font-light leading-relaxed">
                             ফেব্রুয়ারি ভাষার মাস — গর্ব ও আবেগের স্মৃতি। মাতৃভাষার সম্মানে আমাদের বিশেষ ক্যাম্পেইন।
                         </p>
                         <motion.a
@@ -104,8 +104,8 @@ export const LuckyDrawPage: React.FC = () => {
             </section>
 
             {/* Campaign Info Section */}
-            <section className="py-24 relative overflow-hidden bg-gray-50/30">
-                <div className="container mx-auto px-4 relative z-10 text-center mb-16">
+            <section className="py-12 md:py-16 relative overflow-hidden bg-gray-50/30">
+                <div className="container mx-auto px-4 relative z-10 text-center mb-10">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">ক্যাম্পেইন সম্পর্কে তথ্য</h2>
                     <div className="w-20 h-1.5 bg-red-600 mx-auto rounded-full"></div>
                 </div>
@@ -140,21 +140,21 @@ export const LuckyDrawPage: React.FC = () => {
             </section>
 
             {/* Registration Form Section */}
-            <section id="register" className="py-24 md:py-40 bg-white relative">
+            <section id="register" className="py-12 md:py-20 bg-white relative">
                 <div className="container mx-auto px-4">
                     <div className="max-w-2xl mx-auto">
                         <motion.div
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="bg-white p-6 md:p-14 rounded-[2.5rem] shadow-[0_30px_100px_-20px_rgba(0,0,0,0.08)] border border-gray-100"
+                            className="bg-white p-6 md:p-10 rounded-[2.5rem] shadow-[0_30px_100px_-20px_rgba(0,0,0,0.08)] border border-gray-100"
                         >
-                            <div className="text-center mb-12">
+                            <div className="text-center mb-10">
                                 <h2 className="text-4xl font-bold text-gray-900 mb-4">অংশগ্রহণ করুন</h2>
                                 <p className="text-gray-500">নিচের তথ্যগুলো দিয়ে আপনার অংশগ্রহণ নিশ্চিত করুন</p>
                             </div>
 
-                            <form className="space-y-8" onSubmit={handleSubmit}>
+                            <form className="space-y-6" onSubmit={handleSubmit}>
                                 <div className="relative group">
                                     <input
                                         type="text"
@@ -266,7 +266,7 @@ export const LuckyDrawPage: React.FC = () => {
             </section>
 
             {/* Footer */}
-            <footer className="py-16 bg-white border-t border-gray-100">
+            <footer className="py-12 bg-white border-t border-gray-100">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-10">
                         <div className="flex items-center gap-3">
@@ -299,7 +299,7 @@ const InfoCard = ({ icon, title, description, delay }: { icon: React.ReactNode, 
         viewport={{ once: true }}
         transition={{ delay, duration: 0.5 }}
         whileHover={{ y: -10 }}
-        className="bg-white p-10 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:border-red-50 transition-all duration-500 text-center"
+        className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:border-red-50 transition-all duration-500 text-center"
     >
         <div className="flex justify-center mb-6 transform transition-transform duration-500 group-hover:scale-110">{icon}</div>
         <h3 className="text-2xl font-bold text-gray-900 mb-4">{title}</h3>
