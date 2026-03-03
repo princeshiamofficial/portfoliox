@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
   }, [text, isDeleting, loopNum, typingSpeed]);
 
   return (
-    <section className="relative pt-24 pb-12 lg:pt-44 lg:pb-28 bg-gradient-to-b from-orange-50/50 to-white overflow-hidden">
+    <section className="relative pt-8 pb-12 lg:pt-12 lg:pb-28 bg-gradient-to-b from-orange-50/50 to-white overflow-hidden">
       <div className="max-w-[1290px] mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-0">
 
@@ -95,7 +95,7 @@ export const Hero: React.FC = () => {
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[550px] lg:h-[550px] bg-[#fff7ed] rounded-full -z-10"></div>
 
             <img
-              src="https://colorhutbd.xyz/image/orange-girl1.png"
+              src="/orange-girl.png"
               alt="Creative Graphics Designer"
               className="w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[500px] h-auto object-contain drop-shadow-2xl relative z-10"
             />

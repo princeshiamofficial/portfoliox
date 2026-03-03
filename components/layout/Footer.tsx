@@ -11,10 +11,10 @@ export const Footer: React.FC = () => {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[300px] bg-primary/10 blur-[100px] rounded-full pointer-events-none -mt-32"></div>
 
             <div className="max-w-[1290px] mx-auto px-4 md:px-6 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-8 lg:gap-12 mb-20">
 
                     {/* Brand Column (Span 4) */}
-                    <div className="lg:col-span-5 space-y-8">
+                    <div className="col-span-2 md:col-span-4 lg:col-span-5 space-y-8">
                         <div className="mb-6">
                             {/* Using brightness/invert to ensure logo works on dark background */}
                             <img
@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
                     </div>
 
                     {/* Links Columns */}
-                    <div className="lg:col-span-2">
+                    <div className="col-span-1 md:col-span-1 lg:col-span-2">
                         <h4 className="text-white font-bold text-lg mb-8 relative inline-flex flex-col">
                             Company
                             <span className="w-1/2 h-1 bg-primary rounded-full mt-2"></span>
@@ -66,7 +66,7 @@ export const Footer: React.FC = () => {
                         </ul>
                     </div>
 
-                    <div className="lg:col-span-2">
+                    <div className="col-span-1 md:col-span-1 lg:col-span-2">
                         <h4 className="text-white font-bold text-lg mb-8 relative inline-flex flex-col">
                             Products
                             <span className="w-1/2 h-1 bg-primary rounded-full mt-2"></span>
@@ -82,7 +82,7 @@ export const Footer: React.FC = () => {
                         </ul>
                     </div>
 
-                    <div className="lg:col-span-3">
+                    <div className="col-span-2 md:col-span-2 lg:col-span-3">
                         <h4 className="text-white font-bold text-lg mb-8 relative inline-flex flex-col">
                             Support
                             <span className="w-1/2 h-1 bg-primary rounded-full mt-2"></span>

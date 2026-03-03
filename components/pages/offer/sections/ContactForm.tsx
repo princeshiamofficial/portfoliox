@@ -15,7 +15,7 @@ export const ContactForm: React.FC = () => {
   });
 
   // GOOGLE APPS SCRIPT URL
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwLA9KyU8aIwQ33rDSTkhgyFxxIP5NH_voe4Da1W3kuF13SyMrlvHw042sz58Jn1GZv/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzigY8h8L-0o6PDAKb9y0d5CpQzRlbsRpLiBidFcOPa8bXY-zAU7cf_m__xQ4yCtpwC/exec";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;

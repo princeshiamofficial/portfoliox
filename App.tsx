@@ -6,6 +6,7 @@ import { MeetingPage } from './components/pages/meeting/meeting-page';
 import { PrivacyPolicy } from './components/pages/privacy/privacy-page';
 import { RefundPolicy } from './components/pages/refund/refund-page';
 import { ServicesPage } from './components/pages/services/services-page';
+import { OfferPage } from './components/pages/offer/offer-page';
 import { AboutPage } from './components/pages/about/about-page';
 
 import { ContactUsPage } from './components/pages/contact-us/ContactUsPage';
@@ -24,6 +25,10 @@ const ServicesPageWrapper = () => {
   return <ServicesPage onBookMeeting={() => navigate('/services#requirment')} />;
 };
 
+const OfferPageWrapper = () => {
+  return <OfferPage />;
+};
+
 const App: React.FC = () => {
   return (
     <BrowserRouter>
@@ -33,6 +38,7 @@ const App: React.FC = () => {
         <Route element={<BaseLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/services/" element={<ServicesPageWrapper />} />
+          <Route path="/offer/" element={<OfferPageWrapper />} />
           <Route path="/about/" element={<AboutPage />} />
 
           <Route path="/contact-us/" element={<ContactUsPage />} />
