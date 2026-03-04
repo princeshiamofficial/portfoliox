@@ -73,9 +73,13 @@ const PricingCard: React.FC<PricingCardProps> = ({ name, price, originalPrice, d
             ))}
         </div>
 
-        <Link
-            to="/services#requirment"
-            className={`mt-auto w-full py-4 rounded-xl font-bengali font-bold text-center transition-all duration-300 relative overflow-hidden group/btn ${isPopular
+        <a
+            href="#requirment"
+            onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('requirment')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className={`mt-auto w-full py-4 rounded-xl font-bengali font-bold text-center transition-all duration-300 relative overflow-hidden group/btn cursor-pointer ${isPopular
                 ? 'bg-primary text-white shadow-xl shadow-primary/30 hover:shadow-primary/50'
                 : 'bg-gray-50 text-dark hover:bg-gray-800 hover:text-white border border-gray-100'
                 }`}
@@ -85,7 +89,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ name, price, originalPrice, d
                 {isPopular && <Check size={16} />}
             </span>
             {isPopular && <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1s_infinite]"></div>}
-        </Link>
+        </a>
     </motion.div>
 );
 
