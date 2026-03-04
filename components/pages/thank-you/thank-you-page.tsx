@@ -1,9 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, Home, ArrowRight } from 'lucide-react';
+import { CheckCircle, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import confetti from 'canvas-confetti';
 
 export const ThankYouPage: React.FC = () => {
+    useEffect(() => {
+        // Trigger confetti once when the component mounts
+        const duration = 3000;
+        const animationEnd = Date.now() + duration;
+        const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+        const randomInRange = (min: number, max: number) => Math.random() * (max - min) + min;
+
+        const interval: any = setInterval(function () {
+            const timeLeft = animationEnd - Date.now();
+
+            if (timeLeft <= 0) {
+                return clearInterval(interval);
+            }
+
+            const particleCount = 50 * (timeLeft / duration);
+            // since particles fall down, start a bit higher than random
+            confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+            confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+        }, 250);
+
+        return () => clearInterval(interval);
+    }, []);
     return (
         <div className="min-h-screen bg-white flex items-center justify-center px-4 pt-20">
             {/* Background decorative elements */}
@@ -51,21 +75,15 @@ export const ThankYouPage: React.FC = () => {
                     transition={{ delay: 0.5, duration: 0.6 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4"
                 >
-                    <Link
-                        to="/"
-                        className="font-bengali flex items-center gap-2 bg-dark text-white px-8 py-3.5 rounded-full font-bold hover:bg-black transition-all hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto justify-center"
-                    >
-                        <Home size={18} />
-                        হোমে ফিরে যান
-                    </Link>
 
-                    <Link
-                        to="/services"
-                        className="font-bengali flex items-center gap-2 bg-white text-dark border-2 border-gray-100 px-8 py-3.5 rounded-full font-bold hover:border-primary hover:text-primary transition-all hover:shadow-lg hover:-translate-y-1 w-full sm:w-auto justify-center"
+
+                    <a
+                        href="https://store.colorhutbd.xyz"
+                        className="font-bengali flex items-center gap-2 bg-black text-white px-8 py-3.5 rounded-full font-bold hover:bg-gray-900 transition-all hover:shadow-lg hover:-translate-y-1 w-full sm:w-auto justify-center"
                     >
-                        অন্যান্য সার্ভিস
+                        আরো প্রোডাক্ট দেখুন
                         <ArrowRight size={18} />
-                    </Link>
+                    </a>
                 </motion.div>
 
                 {/* Contact Support */}

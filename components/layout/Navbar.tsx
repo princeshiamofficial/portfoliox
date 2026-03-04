@@ -21,7 +21,6 @@ export const Navbar: React.FC = () => {
     { name: 'Services', href: '/services/', hasDropdown: false },
     { name: 'About Us', href: '/about/', hasDropdown: false },
     { name: 'Contact Us', href: '/contact-us/', hasDropdown: false },
-    { name: 'Lucky Draw', href: '/luckydraw/', hasDropdown: false },
   ];
 
   return (
