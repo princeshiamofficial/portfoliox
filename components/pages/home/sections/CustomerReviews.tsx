@@ -6,7 +6,7 @@ const REVIEWS = [
     { src: "https://i.ibb.co.com/rGv80xMd/image.png", alt: "Customer Review 2" },
     { src: "https://i.ibb.co.com/8nBVJw65/image.png", alt: "Customer Review 3" },
     { src: "https://i.ibb.co.com/zk25yZ1/image.png", alt: "Customer Review 4" },
-    { src: "https://i.ibb.co.com/27GjqbqC/image.png", alt: "Customer Review 5" },
+    { src: "https://i.ibb.co.com/hts3Gwm/image.png", alt: "Customer Review 5" },
 ];
 
 export const CustomerReviews: React.FC = () => {
