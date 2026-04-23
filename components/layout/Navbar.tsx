@@ -27,7 +27,7 @@ export const Navbar: React.FC = () => {
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
       <div
         className={`pointer-events-auto transition-all duration-500 ease-in-out flex items-center justify-between w-full ${scrolled
-          ? 'mt-4 max-w-[1290px] mx-4 bg-white/90 backdrop-blur-md border border-white/40 shadow-card rounded-full py-3 px-6 md:px-8'
+          ? 'mt-4 max-w-[1290px] mx-4 bg-white/90 backdrop-blur-md border border-white/40 shadow-card rounded-2xl py-3 px-6 md:px-8'
           : 'bg-transparent py-6 max-w-[1290px] px-4 md:px-6'
           }`}
       >
@@ -36,7 +36,7 @@ export const Navbar: React.FC = () => {
           <img
             src="https://colorhutbd.xyz/image/logo.png"
             alt="Xtrecy Logo"
-            className="h-10 md:h-11 w-auto object-contain"
+            className="h-7 md:h-8 w-auto object-contain"
           />
         </Link>
 
