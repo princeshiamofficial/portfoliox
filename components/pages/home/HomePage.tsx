@@ -12,7 +12,7 @@ import { OwnerInfo } from './sections/OwnerInfo';
 
 export const HomePage: React.FC = () => {
     return (
-        <div className="min-h-screen bg-gray-50 pt-20">
+        <div className="min-h-screen bg-[#050505] pt-0">
             <div className="bg-[#050505] text-white overflow-hidden font-system text-center md:text-left">
                 <HeroSlideshow />
                 <HomeLogos />

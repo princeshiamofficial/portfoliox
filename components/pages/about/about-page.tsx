@@ -2,7 +2,7 @@ import React from 'react';
 
 export const AboutPage: React.FC = () => {
     return (
-        <div className="min-h-screen bg-gray-50 pt-20">
+        <div className="min-h-screen bg-black pt-20">
             <div className="bg-black text-white min-h-[calc(100vh-80px)] py-20 px-4">
                 <div className="max-w-7xl mx-auto">
                     <h1 className="text-5xl font-bold mb-8">About Us</h1>

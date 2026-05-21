@@ -95,9 +95,9 @@ export const Hero: React.FC = () => {
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[550px] lg:h-[550px] bg-[#fff7ed] rounded-full -z-10"></div>
 
             <img
-              src="https://colorhutbd.xyz/image/orange-girl1.png"
+              src="/image/orange-girl1.png"
               alt="Creative Graphics Designer"
-              className="w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[500px] h-auto object-contain drop-shadow-2xl relative z-10"
+              className="w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[500px] h-auto object-contain drop-shadow-2xl relative z-10 -translate-x-[5%]"
             />
           </motion.div>
         </div>

@@ -26,10 +26,7 @@ export const Navbar: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
       <div
-        className={`pointer-events-auto transition-all duration-500 ease-in-out flex items-center justify-between w-full ${scrolled
-          ? 'mt-4 max-w-[1290px] mx-4 bg-white/90 backdrop-blur-md border border-white/40 shadow-card rounded-2xl py-3 px-6 md:px-8'
-          : 'bg-transparent py-6 max-w-[1290px] px-4 md:px-6'
-          }`}
+        className="pointer-events-auto transition-all duration-500 ease-in-out flex items-center justify-between w-full mt-0 max-w-[1290px] mx-0 lg:mx-4 bg-white/90 backdrop-blur-md border-b border-gray-200/80 lg:border lg:border-white/40 shadow-card rounded-none lg:rounded-b-2xl py-3 px-6 lg:px-8"
       >
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">

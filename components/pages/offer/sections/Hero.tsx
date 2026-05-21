@@ -97,7 +97,7 @@ export const Hero: React.FC = () => {
             <img
               src="/orange-girl.png"
               alt="Creative Graphics Designer"
-              className="w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[500px] h-auto object-contain drop-shadow-2xl relative z-10"
+              className="w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[500px] h-auto object-contain drop-shadow-2xl relative z-10 -translate-x-[5%]"
             />
           </motion.div>
         </div>

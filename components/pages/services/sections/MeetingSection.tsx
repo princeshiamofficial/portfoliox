@@ -41,7 +41,7 @@ export const MeetingSection: React.FC<MeetingSectionProps> = ({ onBookMeeting })
                                 <div className="absolute top-[35%] right-[15%] animate-[bounce_4s_infinite] z-30">
                                     <div className="bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-gray-50">
                                         <img
-                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Google_Meet_icon_%282020%29.svg/1024px-Google_Meet_icon_%282020%29.svg.png"
+                                            src="/image/meet-1.png"
                                             alt="Meet"
                                             className="w-7 h-7 md:w-9 md:h-9"
                                         />
@@ -50,7 +50,7 @@ export const MeetingSection: React.FC<MeetingSectionProps> = ({ onBookMeeting })
 
                                 {/* Main Image */}
                                 <img
-                                    src="https://colorhutbd.xyz/image/orange-girl2.png"
+                                    src="/image/orange-girl2.png"
                                     alt="Meeting"
                                     className="relative z-20 w-auto h-[280px] sm:h-[450px] lg:h-[580px] object-contain mb-0 leading-none block"
                                 />
@@ -83,7 +83,7 @@ export const MeetingSection: React.FC<MeetingSectionProps> = ({ onBookMeeting })
                                     className="inline-flex items-center gap-3 bg-white hover:bg-white text-[#1f2937] px-8 py-4 rounded-xl shadow-sm border border-gray-200 transition-all duration-300 hover:shadow-md hover:-translate-y-1 group w-full md:w-auto justify-center md:justify-start cursor-pointer transition-none"
                                 >
                                     <img
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Google_Meet_icon_%282020%29.svg/1024px-Google_Meet_icon_%282020%29.svg.png"
+                                        src="/image/meet-1.png"
                                         alt="Icon"
                                         className="w-6 h-6 object-contain group-hover:scale-110 transition-transform"
                                     />

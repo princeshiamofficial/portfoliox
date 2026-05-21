@@ -4,19 +4,19 @@ import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const MARKET_PLACES = [
-  { name: "Dubai / UAE", img: "https://colorhutbd.xyz/image/place/place1.jpg" },
-  { name: "Australia", img: "https://colorhutbd.xyz/image/place/place2.jpg" },
-  { name: "UK", img: "https://colorhutbd.xyz/image/place/place3.jpg" },
-  { name: "USA", img: "https://colorhutbd.xyz/image/place/place4.jpg" },
-  { name: "Oman", img: "https://colorhutbd.xyz/image/place/place5.jpg" },
-  { name: "Qatar", img: "https://colorhutbd.xyz/image/place/place6.jpg" },
-  { name: "Saudi Arabia", img: "https://colorhutbd.xyz/image/place/place7.jpg" },
-  { name: "Singapore", img: "https://colorhutbd.xyz/image/place/place8.jpg" },
-  { name: "Malaysia", img: "https://colorhutbd.xyz/image/place/place9.jpg" },
-  { name: "Bhutan", img: "https://colorhutbd.xyz/image/place/place10.jpg" },
-  { name: "Nepal", img: "https://colorhutbd.xyz/image/place/place11.jpg" },
-  { name: "India", img: "https://colorhutbd.xyz/image/place/place12.jpg" },
-  { name: "Bangladesh", img: "https://colorhutbd.xyz/image/place/place13.jpg" }
+  { name: "Dubai / UAE", img: "/image/place/place1.jpg" },
+  { name: "Australia", img: "/image/place/place2.jpg" },
+  { name: "UK", img: "/image/place/place3.jpg" },
+  { name: "USA", img: "/image/place/place4.jpg" },
+  { name: "Oman", img: "/image/place/place5.jpg" },
+  { name: "Qatar", img: "/image/place/place6.jpg" },
+  { name: "Saudi Arabia", img: "/image/place/place7.jpg" },
+  { name: "Singapore", img: "/image/place/place8.jpg" },
+  { name: "Malaysia", img: "/image/place/place9.jpg" },
+  { name: "Bhutan", img: "/image/place/place10.jpg" },
+  { name: "Nepal", img: "/image/place/place11.jpg" },
+  { name: "India", img: "/image/place/place12.jpg" },
+  { name: "Bangladesh", img: "/image/place/place13.jpg" }
 ];
 
 export const ProcessAndTools: React.FC = () => {
@@ -24,7 +24,7 @@ export const ProcessAndTools: React.FC = () => {
     {
       title: "কাউন্সিলরের বিশেষজ্ঞ পরামর্শ",
       desc: "আপনার প্রয়োজন, আপনার চিন্তা—সব বুঝে একজন কাউন্সিলর Color Hut থেকে আপনাকে সবচেয়ে উপযোগী সেরা আইডিয়া ও সঠিক নির্দেশনা শেয়ার করবেন।",
-      img: "https://colorhutbd.xyz/image/Graphics-Design.png",
+      img: "/image/Graphics-Design.png",
       link: "#requirment",
       btn: "ফর্ম পুরন করুন"
     },

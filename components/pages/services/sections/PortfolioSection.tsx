@@ -5,25 +5,25 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 const RESTAURANT_IMAGES = [
-  "https://colorhutbd.xyz/image/restaurant/R1.webp",
-  "https://colorhutbd.xyz/image/restaurant/R2.webp",
-  "https://colorhutbd.xyz/image/restaurant/R3.webp",
-  "https://colorhutbd.xyz/image/restaurant/R4.webp",
-  "https://colorhutbd.xyz/image/restaurant/R5.webp",
-  "https://colorhutbd.xyz/image/restaurant/R6.webp",
-  "https://colorhutbd.xyz/image/restaurant/R7.webp",
-  "https://colorhutbd.xyz/image/restaurant/R8.webp",
+  "/image/restaurant/R1.webp",
+  "/image/restaurant/R2.webp",
+  "/image/restaurant/R3.webp",
+  "/image/restaurant/R4.webp",
+  "/image/restaurant/R5.webp",
+  "/image/restaurant/R6.webp",
+  "/image/restaurant/R7.webp",
+  "/image/restaurant/R8.webp",
 ];
 
 const PARLOUR_IMAGES = [
-  "https://colorhutbd.xyz/image/parlour/P1.webp",
-  "https://colorhutbd.xyz/image/parlour/P2.webp",
-  "https://colorhutbd.xyz/image/parlour/P3.webp",
-  "https://colorhutbd.xyz/image/parlour/P4.webp",
-  "https://colorhutbd.xyz/image/parlour/P5.webp",
-  "https://colorhutbd.xyz/image/parlour/P6.webp",
-  "https://colorhutbd.xyz/image/parlour/P7.webp",
-  "https://colorhutbd.xyz/image/parlour/P8.webp",
+  "/image/parlour/P1.webp",
+  "/image/parlour/P2.webp",
+  "/image/parlour/P3.webp",
+  "/image/parlour/P4.webp",
+  "/image/parlour/P5.webp",
+  "/image/parlour/P6.webp",
+  "/image/parlour/P7.webp",
+  "/image/parlour/P8.webp",
 ];
 
 export const PortfolioSection: React.FC = () => {
