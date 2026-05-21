@@ -11,54 +11,53 @@ export const MeetingSection: React.FC<MeetingSectionProps> = ({ onBookMeeting })
             <div className="max-w-[1290px] mx-auto px-4 md:px-6">
 
                 {/* Main Container */}
-                <div className="relative bg-white border border-orange-50 rounded-[40px] md:rounded-[60px] overflow-hidden shadow-soft">
+                <div className="relative bg-white border border-orange-50 rounded-[40px] md:rounded-[60px] shadow-soft">
 
                     {/* Flex Container */}
                     <div className="flex flex-col lg:flex-row items-stretch">
 
                         {/* Left Side: Image Area & Pattern */}
-                        <div className="w-full lg:w-[55%] relative bg-white overflow-hidden min-h-[300px] lg:min-h-[550px] flex flex-col justify-end">
+                        <div className="w-full lg:w-[55%] relative bg-white min-h-[300px] lg:min-h-[380px] flex flex-col justify-end rounded-t-[40px] lg:rounded-l-[60px] lg:rounded-tr-none lg:rounded-br-none">
                             {/* Background Pattern (Dots) */}
-                            <div className="absolute inset-0 z-0 opacity-40 pointer-events-none"
+                            <div className="absolute inset-0 z-0 opacity-40 pointer-events-none rounded-t-[40px] lg:rounded-l-[60px] lg:rounded-tr-none lg:rounded-br-none overflow-hidden"
                                 style={{
                                     backgroundImage: 'radial-gradient(#cbd5e1 2px, transparent 2px)',
                                     backgroundSize: '24px 24px'
                                 }}>
                             </div>
 
-                            <div className="w-full flex items-end justify-center relative z-10 pt-12 lg:pt-16">
-
-                                {/* Floating Icon: Zoom (Orange Circle) */}
-                                <div className="absolute top-[12%] left-[15%] animate-[bounce_3s_infinite] z-30">
-                                    <div className="w-14 h-14 md:w-16 md:h-16 bg-[#ea580c] rounded-full flex items-center justify-center shadow-xl shadow-orange-200 border-[5px] border-white">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 md:w-8 md:h-8 text-white">
-                                            <path d="M4.5 4.5a3 3 0 00-3 3v9a3 3 0 003 3h8.25a3 3 0 003-3v-9a3 3 0 00-3-3H4.5zM19.94 18.75l-2.69-2.69V7.94l2.69-2.69c.94-.94 2.56-.27 2.56 1.06v11.38c0 1.33-1.62 2-2.56 1.06z" />
-                                        </svg>
-                                    </div>
+                            {/* Floating Icon: Zoom (Orange Circle) */}
+                            <div className="absolute top-[12%] left-[15%] animate-[bounce_3s_infinite] z-30">
+                                <div className="w-14 h-14 md:w-16 md:h-16 bg-[#ea580c] rounded-full flex items-center justify-center shadow-xl shadow-orange-200 border-[5px] border-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 md:w-8 md:h-8 text-white">
+                                        <path d="M4.5 4.5a3 3 0 00-3 3v9a3 3 0 003 3h8.25a3 3 0 003-3v-9a3 3 0 00-3-3H4.5zM19.94 18.75l-2.69-2.69V7.94l2.69-2.69c.94-.94 2.56-.27 2.56 1.06v11.38c0 1.33-1.62 2-2.56 1.06z" />
+                                    </svg>
                                 </div>
+                            </div>
 
-                                {/* Floating Icon: Google Meet */}
-                                <div className="absolute top-[35%] right-[15%] animate-[bounce_4s_infinite] z-30">
-                                    <div className="bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-gray-50">
-                                        <img
-                                            src="/image/meet-1.png"
-                                            alt="Meet"
-                                            className="w-7 h-7 md:w-9 md:h-9"
-                                        />
-                                    </div>
+                            {/* Floating Icon: Google Meet */}
+                            <div className="absolute top-[35%] right-[15%] animate-[bounce_4s_infinite] z-30">
+                                <div className="bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-gray-50">
+                                    <img
+                                        src="/image/meet-1.png"
+                                        alt="Meet"
+                                        className="w-7 h-7 md:w-9 md:h-9"
+                                    />
                                 </div>
+                            </div>
 
+                            <div className="w-full flex items-end justify-center relative z-10 pt-12 lg:pt-0">
                                 {/* Main Image */}
                                 <img
                                     src="/image/orange-girl2.png"
                                     alt="Meeting"
-                                    className="relative z-20 w-auto h-[280px] sm:h-[450px] lg:h-[580px] object-contain mb-0 leading-none block"
+                                    className="relative lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2 z-20 w-auto h-[280px] sm:h-[450px] lg:h-[480px] object-contain mb-0 leading-none block"
                                 />
                             </div>
                         </div>
 
                         {/* Right Side: Content Card */}
-                        <div className="w-full lg:w-[45%] bg-[#fff7ed] p-8 md:p-16 flex flex-col justify-center relative z-20">
+                        <div className="w-full lg:w-[45%] bg-[#fff7ed] p-8 md:py-12 md:px-16 lg:py-8 lg:px-12 flex flex-col justify-center relative z-20 rounded-b-[40px] lg:rounded-r-[60px] lg:rounded-tl-none lg:rounded-bl-none">
                             <div className="max-w-lg mx-auto lg:mx-0">
                                 {/* Live Badge */}
                                 {/*<div className="flex items-center gap-3 mb-5">*/}
