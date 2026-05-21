@@ -76,82 +76,65 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="lg:hidden text-gray-700 p-2 hover:bg-gray-100 rounded-full transition-colors"
+          className="lg:hidden text-gray-700 p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
         >
-          <Menu size={26} />
+          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Menu Overlay & Drawer */}
+      {/* Mobile Menu Dropdown */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <>
-            {/* Dark Backdrop (not glassy, solid opacity) */}
+          <div className="w-full max-w-[1290px] px-4 lg:hidden pointer-events-auto mt-2">
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setMobileMenuOpen(false)}
-              className="fixed inset-0 bg-black/50 z-50 lg:hidden pointer-events-auto"
-            />
-
-            {/* Drawer */}
-            <motion.div
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 right-0 w-full max-w-[320px] bg-white z-50 lg:hidden flex flex-col p-6 shadow-2xl pointer-events-auto"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.2 }}
+              className="bg-white rounded-2xl shadow-2xl border border-gray-100 flex flex-col p-5 gap-4"
             >
-              {/* Header */}
-              <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-100">
-                <img
-                  src="https://colorhutbd.xyz/image/logo.png"
-                  alt="Xtrecy Logo"
-                  className="h-7 w-auto object-contain"
-                />
+              {/* Dropdown Header */}
+              <div className="flex items-center justify-between pb-3 border-b border-gray-100">
+                <span className="text-xs font-bold uppercase tracking-wider text-gray-400">Navigation</span>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 text-gray-500 hover:text-dark hover:bg-gray-100 rounded-full transition-all"
+                  className="p-1.5 rounded-full hover:bg-gray-100 text-gray-500 transition-colors"
                   aria-label="Close menu"
                 >
-                  <X size={24} />
+                  <X size={18} />
                 </button>
               </div>
 
               {/* Navigation Links */}
-              <div className="flex flex-col gap-2 flex-grow">
+              <nav className="flex flex-col gap-1">
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
                     to={link.href}
-                    className={`flex items-center justify-between px-4 py-3.5 rounded-xl text-base font-semibold transition-all duration-200 ${
+                    className={`flex items-center justify-between px-3.5 py-3 rounded-xl text-base font-semibold transition-all duration-200 ${
                       location.pathname === link.href
-                        ? 'bg-orange-50 text-primary'
-                        : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
+                        ? 'bg-primary/10 text-primary'
+                        : 'text-gray-700 hover:bg-gray-50'
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <span>{link.name}</span>
-                    <span className="text-gray-400 group-hover:text-primary transition-colors">→</span>
+                    <span className={`transition-transform duration-200 ${location.pathname === link.href ? 'text-primary' : 'text-gray-300'}`}>→</span>
                   </Link>
                 ))}
-              </div>
+              </nav>
 
-              {/* Footer / CTA in Drawer */}
-              <div className="pt-6 border-t border-gray-100">
-                <Link
-                  to="/#requirment"
-                  className="block w-full bg-primary hover:bg-primary-dark text-white text-center py-4 rounded-xl font-bold transition-all shadow-md active:scale-95 text-base"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Sign up
-                </Link>
-              </div>
+              {/* CTA Button */}
+              <Link
+                to="/#requirment"
+                className="bg-primary text-white text-center px-6 py-3.5 rounded-xl font-bold hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20 mt-1"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Sign up
+              </Link>
             </motion.div>
-          </>
+          </div>
         )}
       </AnimatePresence>
     </header>
