@@ -74,7 +74,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ name, price, originalPrice, d
         </div>
 
         <Link
-            to="/services#requirment"
+            to="/#requirment"
             className={`mt-auto w-full py-4 rounded-xl font-bengali font-bold text-center transition-all duration-300 relative overflow-hidden group/btn ${isPopular
                 ? 'bg-primary text-white shadow-xl shadow-primary/30 hover:shadow-primary/50'
                 : 'bg-gray-50 text-dark hover:bg-gray-800 hover:text-white border border-gray-100'

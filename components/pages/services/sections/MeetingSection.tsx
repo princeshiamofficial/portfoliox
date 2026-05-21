@@ -79,7 +79,7 @@ export const MeetingSection: React.FC<MeetingSectionProps> = ({ onBookMeeting })
 
                                 {/* Button */}
                                 <Link
-                                    to="/services#requirment"
+                                    to="/#requirment"
                                     className="inline-flex items-center gap-3 bg-white hover:bg-white text-[#1f2937] px-8 py-4 rounded-xl shadow-sm border border-gray-200 transition-all duration-300 hover:shadow-md hover:-translate-y-1 group w-full md:w-auto justify-center md:justify-start cursor-pointer transition-none"
                                 >
                                     <img

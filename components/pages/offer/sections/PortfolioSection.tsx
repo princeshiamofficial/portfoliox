@@ -46,7 +46,7 @@ export const PortfolioSection: React.FC = () => {
 
   const handleTabClick = (tab: string) => {
     if (tab === 'More+') {
-      navigate('/services#requirment');
+      navigate('/#requirment');
     } else {
       setActiveTab(tab);
     }
