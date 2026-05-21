@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
     const scrollToTop = () => {
@@ -56,11 +57,18 @@ export const Footer: React.FC = () => {
                             <span className="w-1/2 h-1 bg-primary rounded-full mt-2"></span>
                         </h4>
                         <ul className="space-y-4">
-                            {['About', 'Service', 'Career', 'Investor'].map((item) => (
-                                <li key={item}>
-                                    <a href="#" className="text-gray-400 hover:text-white hover:translate-x-2 transition-all duration-300 inline-block text-sm">
-                                        {item}
-                                    </a>
+                            {[
+                                { name: 'About', path: '/about' },
+                                { name: 'Service', path: '/services' }
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    <Link
+                                        to={item.path}
+                                        onClick={scrollToTop}
+                                        className="text-gray-400 hover:text-white hover:translate-x-2 transition-all duration-300 inline-block text-sm"
+                                    >
+                                        {item.name}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
