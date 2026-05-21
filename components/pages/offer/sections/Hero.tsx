@@ -142,11 +142,71 @@ export const Hero: React.FC = () => {
               />
             </div>
 
+            {/* Rising Smoke Effect (Behind Image) */}
+            <div className="absolute bottom-[20px] left-1/2 -translate-x-[55%] w-[80%] h-[200px] pointer-events-none z-0 overflow-hidden">
+              {[...Array(5)].map((_, i) => (
+                <motion.div
+                  key={`back-${i}`}
+                  initial={{ opacity: 0, y: 160, x: 0, scale: 0.6 }}
+                  animate={{
+                    opacity: [0, 0.45, 0.2, 0],
+                    y: [160, -40],
+                    x: [
+                      i % 2 === 0 ? 15 : -15,
+                      i % 3 === 0 ? -30 : 30,
+                      i % 2 === 0 ? -10 : 10
+                    ],
+                    scale: [0.6, 1.4, 2.2, 3.0],
+                  }}
+                  transition={{
+                    duration: 6 + i * 1.5,
+                    repeat: Infinity,
+                    delay: i * 1.2,
+                    ease: "easeOut",
+                  }}
+                  className="absolute bottom-0 w-[50px] h-[50px] bg-gradient-to-t from-orange-300/30 via-orange-100/10 to-transparent rounded-full blur-md"
+                  style={{
+                    left: `${20 + (i * 12)}%`,
+                  }}
+                />
+              ))}
+            </div>
+
             <img
               src="/orange-girl.png"
               alt="Creative Graphics Designer"
               className="w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[500px] h-auto object-contain drop-shadow-2xl relative z-10 -translate-x-[5%]"
             />
+
+            {/* Rising Smoke Effect (In Front of Image) */}
+            <div className="absolute bottom-[10px] left-1/2 -translate-x-[55%] w-[80%] h-[180px] pointer-events-none z-20 overflow-hidden">
+              {[...Array(6)].map((_, i) => (
+                <motion.div
+                  key={`front-${i}`}
+                  initial={{ opacity: 0, y: 140, x: 0, scale: 0.5 }}
+                  animate={{
+                    opacity: [0, 0.35, 0.15, 0],
+                    y: [140, -30],
+                    x: [
+                      i % 2 === 0 ? -10 : 10,
+                      i % 3 === 0 ? 20 : -20,
+                      i % 2 === 0 ? 5 : -5
+                    ],
+                    scale: [0.5, 1.2, 1.9, 2.6],
+                  }}
+                  transition={{
+                    duration: 5.5 + i * 1.3,
+                    repeat: Infinity,
+                    delay: i * 1.0 + 0.5,
+                    ease: "easeOut",
+                  }}
+                  className="absolute bottom-0 w-[40px] h-[40px] bg-gradient-to-t from-white/30 via-orange-50/10 to-transparent rounded-full blur-sm"
+                  style={{
+                    left: `${25 + (i * 10)}%`,
+                  }}
+                />
+              ))}
+            </div>
           </motion.div>
         </div>
 
