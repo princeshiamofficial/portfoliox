@@ -14,8 +14,8 @@ export const Footer: React.FC = () => {
             <div className="max-w-[1290px] mx-auto px-4 md:px-6 relative z-10">
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-8 lg:gap-12 mb-20">
 
-                    {/* Brand Column (Span 4) */}
-                    <div className="col-span-2 md:col-span-4 lg:col-span-5 space-y-8">
+                    {/* Brand Column (Span 7) */}
+                    <div className="col-span-2 md:col-span-4 lg:col-span-7 space-y-8">
                         <div className="mb-6">
                             {/* Using brightness/invert to ensure logo works on dark background */}
                             <img
@@ -48,30 +48,6 @@ export const Footer: React.FC = () => {
                                 <span className="text-sm">colorhut.official@gmail.com</span>
                             </a>
                         </div>
-                    </div>
-
-                    {/* Links Columns */}
-                    <div className="col-span-1 md:col-span-1 lg:col-span-2">
-                        <h4 className="text-white font-bold text-lg mb-8 relative inline-flex flex-col">
-                            Company
-                            <span className="w-1/2 h-1 bg-primary rounded-full mt-2"></span>
-                        </h4>
-                        <ul className="space-y-4">
-                            {[
-                                { name: 'About', path: '/about' },
-                                { name: 'Service', path: '/services' }
-                            ].map((item) => (
-                                <li key={item.name}>
-                                    <Link
-                                        to={item.path}
-                                        onClick={scrollToTop}
-                                        className="text-gray-400 hover:text-white hover:translate-x-2 transition-all duration-300 inline-block text-sm"
-                                    >
-                                        {item.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
                     </div>
 
                     <div className="col-span-1 md:col-span-1 lg:col-span-2">
