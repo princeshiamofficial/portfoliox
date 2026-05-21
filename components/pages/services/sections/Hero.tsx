@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
   }, [text, isDeleting, loopNum, typingSpeed]);
 
   return (
-    <section className="relative pt-24 pb-12 lg:pt-44 lg:pb-28 bg-gradient-to-b from-orange-50/50 to-white overflow-hidden">
+    <section className="relative pt-24 pb-6 lg:pt-44 lg:pb-28 bg-gradient-to-b from-orange-50/50 to-white overflow-hidden">
       <div className="max-w-[1290px] mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-0">
 
@@ -92,7 +92,55 @@ export const Hero: React.FC = () => {
             className="relative flex justify-center lg:justify-end order-1 lg:order-2"
           >
             {/* Solid Circle Background - Responsive Size */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[550px] lg:h-[550px] bg-[#fff7ed] rounded-full -z-10"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[550px] lg:h-[550px] bg-[#fff7ed]/80 rounded-full -z-10 shadow-inner"></div>
+
+            {/* Smokey/Misty Effects */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 pointer-events-none flex items-center justify-center overflow-visible">
+              <motion.div
+                animate={{
+                  scale: [1, 1.15, 0.9, 1],
+                  x: [0, 20, -15, 0],
+                  y: [0, -20, 15, 0],
+                  rotate: [0, 120, 240, 360],
+                  opacity: [0.3, 0.45, 0.3, 0.3],
+                }}
+                transition={{
+                  duration: 12,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute w-[300px] h-[300px] sm:w-[420px] sm:h-[420px] lg:w-[580px] lg:h-[580px] bg-gradient-to-tr from-orange-400 via-pink-300 to-transparent rounded-full blur-[40px] sm:blur-[65px] lg:blur-[90px]"
+              />
+              <motion.div
+                animate={{
+                  scale: [1, 0.85, 1.1, 1],
+                  x: [0, -25, 20, 0],
+                  y: [0, 25, -20, 0],
+                  rotate: [360, 240, 120, 0],
+                  opacity: [0.2, 0.35, 0.2, 0.2],
+                }}
+                transition={{
+                  duration: 16,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] lg:w-[540px] lg:h-[540px] bg-gradient-to-bl from-amber-300 via-orange-200 to-transparent rounded-full blur-[35px] sm:blur-[55px] lg:blur-[80px]"
+              />
+              <motion.div
+                animate={{
+                  scale: [0.9, 1.05, 0.95, 0.9],
+                  x: [15, -15, 10, 15],
+                  y: [-15, 15, -10, -15],
+                  opacity: [0.4, 0.6, 0.4, 0.4],
+                }}
+                transition={{
+                  duration: 14,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute w-[320px] h-[320px] sm:w-[450px] sm:h-[450px] lg:w-[600px] lg:h-[600px] bg-gradient-to-r from-white via-orange-50 to-transparent rounded-full blur-[45px] sm:blur-[70px] lg:blur-[100px]"
+              />
+            </div>
 
             <img
               src="/image/orange-girl1.png"
