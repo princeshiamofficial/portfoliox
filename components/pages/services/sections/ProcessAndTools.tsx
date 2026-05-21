@@ -45,7 +45,7 @@ export const ProcessAndTools: React.FC = () => {
   ];
 
   return (
-    <section className="pt-10 pb-20 md:py-28 relative" id="audit">
+    <section className="py-20 md:py-28 relative" id="audit">
       <div className="max-w-[1290px] mx-auto px-4 md:px-6 relative z-10">
         <SectionHeader text="কালার হাট পার্সোনাল মেনু এসিস্ট্যান্ট!" />
 
