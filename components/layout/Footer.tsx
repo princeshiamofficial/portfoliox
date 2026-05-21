@@ -66,7 +66,7 @@ export const Footer: React.FC = () => {
                         </ul>
                     </div>
 
-                    <div className="col-span-2 md:col-span-2 lg:col-span-3">
+                    <div className="col-span-1 md:col-span-2 lg:col-span-3">
                         <h4 className="text-white font-bold text-lg mb-8 relative inline-flex flex-col">
                             Support
                             <span className="w-1/2 h-1 bg-primary rounded-full mt-2"></span>
