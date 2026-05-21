@@ -49,7 +49,7 @@ export const ProcessAndTools: React.FC = () => {
       <div className="max-w-[1290px] mx-auto px-4 md:px-6 relative z-10">
         <SectionHeader text="কালার হাট পার্সোনাল মেনু এসিস্ট্যান্ট!" />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-28">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 md:mb-28">
           {steps.map((step, idx) => (
             <motion.div
               key={idx}
@@ -91,9 +91,9 @@ export const ProcessAndTools: React.FC = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="pt-16 border-t border-gray-200/60 overflow-hidden"
+          className="pt-6 md:pt-16 border-t border-gray-200/60 overflow-hidden"
         >
-          <div className="text-center mb-10">
+          <div className="text-center mb-6 md:mb-10">
             <h3 className="font-bengali text-2xl font-bold text-gray-400 uppercase tracking-widest">Global Markets Experience</h3>
           </div>
 
