@@ -94,11 +94,59 @@ export const Hero: React.FC = () => {
             {/* Solid Circle Background - Responsive Size */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[550px] lg:h-[550px] bg-[#fff7ed] rounded-full -z-10"></div>
 
-            <img
-              src="/orange-girl.png"
-              alt="Creative Graphics Designer"
-              className="w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[500px] h-auto object-contain drop-shadow-2xl relative z-10 -translate-x-[5%]"
-            />
+            <div className="relative">
+              <img
+                src="/orange-girl.png"
+                alt="Creative Graphics Designer"
+                className="w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[500px] h-auto object-contain drop-shadow-2xl relative z-10 -translate-x-[5%]"
+              />
+              
+              {/* Bottom Fade to blend image bottom */}
+              <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white to-transparent z-20 pointer-events-none"></div>
+
+              {/* Smoke/Fog Effect at the bottom of the image */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-[55%] w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[500px] h-28 overflow-hidden pointer-events-none z-20">
+                <div className="smoke-particle smoke-1"></div>
+                <div className="smoke-particle smoke-2"></div>
+                <div className="smoke-particle smoke-3"></div>
+                <div className="smoke-particle smoke-4"></div>
+                <div className="smoke-particle smoke-5"></div>
+              </div>
+            </div>
+
+            <style>{`
+              @keyframes smokeRise {
+                0% {
+                  transform: translateY(15px) scale(0.7) rotate(0deg);
+                  opacity: 0;
+                }
+                15% {
+                  opacity: 0.4;
+                }
+                50% {
+                  opacity: 0.5;
+                }
+                100% {
+                  transform: translateY(-50px) scale(1.6) rotate(120deg);
+                  opacity: 0;
+                }
+              }
+              .smoke-particle {
+                position: absolute;
+                bottom: -20px;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgba(254, 215, 170, 0.4) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 70%);
+                filter: blur(8px);
+                animation: smokeRise 5s infinite ease-out;
+              }
+              .smoke-1 { left: 10%; animation-delay: 0s; animation-duration: 4.5s; }
+              .smoke-2 { left: 30%; animation-delay: 1s; animation-duration: 5.5s; }
+              .smoke-3 { left: 50%; animation-delay: 2s; animation-duration: 4.8s; }
+              .smoke-4 { left: 70%; animation-delay: 3s; animation-duration: 6s; }
+              .smoke-5 { left: 85%; animation-delay: 4s; animation-duration: 5.2s; }
+            `}</style>
           </motion.div>
         </div>
 
