@@ -86,31 +86,94 @@ export const Navbar: React.FC = () => {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ type: "tween", duration: 0.3 }}
-            className="fixed inset-0 bg-white z-40 lg:hidden flex flex-col pt-24 px-6 gap-4 pointer-events-auto"
-          >
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
-                className="border-b border-gray-100 pb-3 text-lg font-medium text-gray-800"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link
-              to="/#requirment"
-              className="bg-primary text-white text-center px-6 py-3 rounded-lg mt-4 font-semibold"
+          <>
+            {/* Dark blur backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               onClick={() => setMobileMenuOpen(false)}
+              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden pointer-events-auto"
+            />
+
+            {/* Menu Drawer */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="fixed top-0 right-0 bottom-0 w-[80%] max-w-[360px] bg-white/98 backdrop-blur-md z-50 lg:hidden flex flex-col p-6 shadow-2xl border-l border-gray-100/50 pointer-events-auto"
             >
-              Sign up
-            </Link>
-          </motion.div>
+              {/* Header inside drawer */}
+              <div className="flex items-center justify-between pb-5 mb-6 border-b border-gray-100/80">
+                <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+                  <img
+                    src="https://colorhutbd.xyz/image/logo.png"
+                    alt="Xtrecy Logo"
+                    className="h-7 w-auto object-contain"
+                  />
+                </Link>
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 hover:bg-gray-100 border border-gray-100 text-gray-700 active:scale-95 transition-all"
+                  aria-label="Close menu"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+
+              {/* Navigation Links with staggered animation */}
+              <div className="flex flex-col gap-1 flex-grow">
+                {navLinks.map((link, idx) => {
+                  const isActive = location.pathname === link.href;
+                  return (
+                    <motion.div
+                      key={link.name}
+                      initial={{ opacity: 0, x: 15 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.06 + 0.1 }}
+                    >
+                      <Link
+                        to={link.href}
+                        className={`flex items-center justify-between px-4 py-3.5 rounded-xl font-semibold text-[15px] transition-all duration-300 ${
+                          isActive
+                            ? 'bg-orange-50/75 text-primary'
+                            : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
+                        }`}
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <span>{link.name}</span>
+                        <ChevronDown className="w-4 h-4 -rotate-90 opacity-40 group-hover:opacity-100 transition-opacity" />
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: navLinks.length * 0.06 + 0.15 }}
+                  className="mt-6 px-1"
+                >
+                  <Link
+                    to="/#requirment"
+                    className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-primary to-orange-600 hover:to-orange-700 text-white py-4 rounded-xl font-bold shadow-lg shadow-orange-500/20 active:scale-[0.98] transition-all duration-300 text-center"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span>Sign up</span>
+                  </Link>
+                </motion.div>
+              </div>
+
+              {/* Extra Info / Footer in drawer */}
+              <div className="mt-auto pt-6 border-t border-gray-100 flex flex-col gap-4 text-center">
+                <div className="text-[11px] text-gray-400">
+                  <p>© 2026 Color Hut. All rights reserved.</p>
+                  <p className="mt-0.5">Premium Restaurant & Parlour Menu</p>
+                </div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>
