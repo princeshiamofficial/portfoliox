@@ -76,101 +76,79 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="lg:hidden text-gray-700 p-2"
+          className="lg:hidden text-gray-700 p-2 hover:bg-gray-100 rounded-full transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          <Menu size={26} />
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay & Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
-            {/* Dark blur backdrop */}
+            {/* Dark Backdrop (not glassy, solid opacity) */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMobileMenuOpen(false)}
-              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden pointer-events-auto"
+              className="fixed inset-0 bg-black/50 z-50 lg:hidden pointer-events-auto"
             />
 
-            {/* Menu Drawer */}
+            {/* Drawer */}
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-[80%] max-w-[360px] bg-white/98 backdrop-blur-md z-50 lg:hidden flex flex-col p-6 shadow-2xl border-l border-gray-100/50 pointer-events-auto"
+              className="fixed inset-y-0 right-0 w-full max-w-[320px] bg-white z-50 lg:hidden flex flex-col p-6 shadow-2xl pointer-events-auto"
             >
-              {/* Header inside drawer */}
-              <div className="flex items-center justify-between pb-5 mb-6 border-b border-gray-100/80">
-                <Link to="/" onClick={() => setMobileMenuOpen(false)}>
-                  <img
-                    src="https://colorhutbd.xyz/image/logo.png"
-                    alt="Xtrecy Logo"
-                    className="h-7 w-auto object-contain"
-                  />
-                </Link>
+              {/* Header */}
+              <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-100">
+                <img
+                  src="https://colorhutbd.xyz/image/logo.png"
+                  alt="Xtrecy Logo"
+                  className="h-7 w-auto object-contain"
+                />
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 hover:bg-gray-100 border border-gray-100 text-gray-700 active:scale-95 transition-all"
+                  className="p-2 text-gray-500 hover:text-dark hover:bg-gray-100 rounded-full transition-all"
                   aria-label="Close menu"
                 >
-                  <X size={20} />
+                  <X size={24} />
                 </button>
               </div>
 
-              {/* Navigation Links with staggered animation */}
-              <div className="flex flex-col gap-1 flex-grow">
-                {navLinks.map((link, idx) => {
-                  const isActive = location.pathname === link.href;
-                  return (
-                    <motion.div
-                      key={link.name}
-                      initial={{ opacity: 0, x: 15 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: idx * 0.06 + 0.1 }}
-                    >
-                      <Link
-                        to={link.href}
-                        className={`flex items-center justify-between px-4 py-3.5 rounded-xl font-semibold text-[15px] transition-all duration-300 ${
-                          isActive
-                            ? 'bg-orange-50/75 text-primary'
-                            : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
-                        }`}
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <span>{link.name}</span>
-                        <ChevronDown className="w-4 h-4 -rotate-90 opacity-40 group-hover:opacity-100 transition-opacity" />
-                      </Link>
-                    </motion.div>
-                  );
-                })}
-
-                <motion.div
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: navLinks.length * 0.06 + 0.15 }}
-                  className="mt-6 px-1"
-                >
+              {/* Navigation Links */}
+              <div className="flex flex-col gap-2 flex-grow">
+                {navLinks.map((link) => (
                   <Link
-                    to="/#requirment"
-                    className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-primary to-orange-600 hover:to-orange-700 text-white py-4 rounded-xl font-bold shadow-lg shadow-orange-500/20 active:scale-[0.98] transition-all duration-300 text-center"
+                    key={link.name}
+                    to={link.href}
+                    className={`flex items-center justify-between px-4 py-3.5 rounded-xl text-base font-semibold transition-all duration-200 ${
+                      location.pathname === link.href
+                        ? 'bg-orange-50 text-primary'
+                        : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
+                    }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    <span>Sign up</span>
+                    <span>{link.name}</span>
+                    <span className="text-gray-400 group-hover:text-primary transition-colors">→</span>
                   </Link>
-                </motion.div>
+                ))}
               </div>
 
-              {/* Extra Info / Footer in drawer */}
-              <div className="mt-auto pt-6 border-t border-gray-100 flex flex-col gap-4 text-center">
-                <div className="text-[11px] text-gray-400">
-                  <p>© 2026 Color Hut. All rights reserved.</p>
-                  <p className="mt-0.5">Premium Restaurant & Parlour Menu</p>
-                </div>
+              {/* Footer / CTA in Drawer */}
+              <div className="pt-6 border-t border-gray-100">
+                <Link
+                  to="/#requirment"
+                  className="block w-full bg-primary hover:bg-primary-dark text-white text-center py-4 rounded-xl font-bold transition-all shadow-md active:scale-95 text-base"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Sign up
+                </Link>
               </div>
             </motion.div>
           </>
