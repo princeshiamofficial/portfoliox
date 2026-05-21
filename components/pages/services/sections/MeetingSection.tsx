@@ -27,7 +27,7 @@ export const MeetingSection: React.FC<MeetingSectionProps> = ({ onBookMeeting })
                             </div>
 
                             {/* Floating Icon: Zoom (Orange Circle) */}
-                            <div className="absolute top-[12%] right-[15%] animate-[bounce_3s_infinite] z-30">
+                            <div className="absolute top-[12%] right-[15%] animate-[bounce_3s_infinite] z-10">
                                 <div className="w-14 h-14 md:w-16 md:h-16 bg-[#ea580c] rounded-full flex items-center justify-center shadow-xl shadow-orange-200 border-[5px] border-white">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 md:w-8 md:h-8 text-white">
                                         <path d="M4.5 4.5a3 3 0 00-3 3v9a3 3 0 003 3h8.25a3 3 0 003-3v-9a3 3 0 00-3-3H4.5zM19.94 18.75l-2.69-2.69V7.94l2.69-2.69c.94-.94 2.56-.27 2.56 1.06v11.38c0 1.33-1.62 2-2.56 1.06z" />
@@ -36,7 +36,7 @@ export const MeetingSection: React.FC<MeetingSectionProps> = ({ onBookMeeting })
                             </div>
 
                             {/* Floating Icon: Google Meet */}
-                            <div className="absolute top-[35%] left-[15%] animate-[bounce_4s_infinite] z-30">
+                            <div className="absolute top-[35%] left-[15%] animate-[bounce_4s_infinite] z-10">
                                 <div className="bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-gray-50">
                                     <img
                                         src="/image/meet-1.png"
@@ -46,7 +46,7 @@ export const MeetingSection: React.FC<MeetingSectionProps> = ({ onBookMeeting })
                                 </div>
                             </div>
 
-                            <div className="w-full flex items-end justify-center relative z-10 pt-12 lg:pt-0">
+                            <div className="w-full flex items-end justify-center relative z-20 pt-12 lg:pt-0">
                                 {/* Main Image */}
                                 <img
                                     src="/image/orange-girl2.png"
