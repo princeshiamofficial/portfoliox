@@ -115,38 +115,62 @@ export const Hero: React.FC = () => {
             </div>
 
             <style>{`
-              @keyframes smokeRise {
-                0% {
-                  transform: translateY(15px) scale(0.7) rotate(0deg);
-                  opacity: 0;
-                }
-                15% {
-                  opacity: 0.4;
-                }
-                50% {
-                  opacity: 0.5;
-                }
-                100% {
-                  transform: translateY(-50px) scale(1.6) rotate(120deg);
-                  opacity: 0;
-                }
+              @keyframes smokeRise1 {
+                0% { transform: translateY(15px) translateX(0) scale(0.6) rotate(0deg); opacity: 0; }
+                15% { opacity: 0.45; }
+                50% { opacity: 0.35; transform: translateY(-30px) translateX(-15px) scale(1.1) rotate(60deg); }
+                100% { transform: translateY(-75px) translateX(-30px) scale(1.7) rotate(140deg); opacity: 0; }
+              }
+              @keyframes smokeRise2 {
+                0% { transform: translateY(15px) translateX(0) scale(0.5) rotate(0deg); opacity: 0; }
+                15% { opacity: 0.45; }
+                50% { opacity: 0.35; transform: translateY(-35px) translateX(15px) scale(1.2) rotate(-50deg); }
+                100% { transform: translateY(-80px) translateX(30px) scale(1.8) rotate(-120deg); opacity: 0; }
+              }
+              @keyframes smokeRise3 {
+                0% { transform: translateY(15px) translateX(0) scale(0.7) rotate(0deg); opacity: 0; }
+                15% { opacity: 0.5; }
+                50% { opacity: 0.4; transform: translateY(-28px) translateX(-5px) scale(1.0) rotate(45deg); }
+                100% { transform: translateY(-70px) translateX(-12px) scale(1.6) rotate(100deg); opacity: 0; }
+              }
+              @keyframes smokeRise4 {
+                0% { transform: translateY(15px) translateX(0) scale(0.6) rotate(0deg); opacity: 0; }
+                15% { opacity: 0.4; }
+                50% { opacity: 0.3; transform: translateY(-40px) translateX(20px) scale(1.3) rotate(-70deg); }
+                100% { transform: translateY(-85px) translateX(40px) scale(1.9) rotate(-150deg); opacity: 0; }
+              }
+              @keyframes smokeRise5 {
+                0% { transform: translateY(15px) translateX(0) scale(0.5) rotate(0deg); opacity: 0; }
+                15% { opacity: 0.5; }
+                50% { opacity: 0.4; transform: translateY(-32px) translateX(-10px) scale(1.1) rotate(30deg); }
+                100% { transform: translateY(-75px) translateX(-20px) scale(1.7) rotate(80deg); opacity: 0; }
               }
               .smoke-particle {
                 position: absolute;
-                bottom: -20px;
-                width: 100px;
-                height: 100px;
+                bottom: -25px;
+                width: 110px;
+                height: 110px;
                 border-radius: 50%;
-                background: radial-gradient(circle, rgba(254, 215, 170, 0.4) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 70%);
-                filter: blur(8px);
-                animation: smokeRise 5s infinite ease-out;
+                background: radial-gradient(circle, rgba(254, 215, 170, 0.45) 0%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 70%);
+                filter: url(#realistic-smoke) blur(3px);
+                pointer-events: none;
               }
-              .smoke-1 { left: 10%; animation-delay: 0s; animation-duration: 4.5s; }
-              .smoke-2 { left: 30%; animation-delay: 1s; animation-duration: 5.5s; }
-              .smoke-3 { left: 50%; animation-delay: 2s; animation-duration: 4.8s; }
-              .smoke-4 { left: 70%; animation-delay: 3s; animation-duration: 6s; }
-              .smoke-5 { left: 85%; animation-delay: 4s; animation-duration: 5.2s; }
+              .smoke-1 { left: 8%; animation: smokeRise1 5.2s infinite ease-out; }
+              .smoke-2 { left: 28%; animation: smokeRise2 6.5s infinite ease-out; animation-delay: 1.2s; }
+              .smoke-3 { left: 48%; animation: smokeRise3 5.8s infinite ease-out; animation-delay: 2.5s; }
+              .smoke-4 { left: 68%; animation: smokeRise4 7.2s infinite ease-out; animation-delay: 3.8s; }
+              .smoke-5 { left: 82%; animation: smokeRise5 6.0s infinite ease-out; animation-delay: 5s; }
             `}</style>
+
+            {/* SVG Turbulence Filter for Realistic Organic Smoke Distortion */}
+            <svg className="hidden" width="0" height="0">
+              <defs>
+                <filter id="realistic-smoke">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.015 0.04" numOctaves="4" result="noise" />
+                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="22" xChannelSelector="R" yChannelSelector="G" />
+                </filter>
+              </defs>
+            </svg>
           </motion.div>
         </div>
 
