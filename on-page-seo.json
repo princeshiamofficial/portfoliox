@@ -1,30 +1,30 @@
 {
-    "siteName": "Color Hut - Creative Agency & Digital Studio",
-    "defaultTitle": "Color Hut | Premium Digital Marketing & Creative Services",
-    "defaultDescription": "Color Hut is a leading creative agency offering graphics design, web development, digital marketing, photography, videography, and customer relationship services. Transform your brand with our expert team.",
-    "defaultKeywords": "creative agency, digital marketing, graphics design, web development, photography, videography, branding, logo design, social media marketing, SEO services, Bangladesh creative agency",
+    "siteName": "Color Hut - Premium Restaurant & Parlour Menu Solutions",
+    "defaultTitle": "Color Hut | Premium Restaurant & Parlour Menu Solutions",
+    "defaultDescription": "Color Hut Provide Custom Restaurant and Parlour Menu service in whole Bangladesh. Color Hut served 5000+ Partner all over the world. Color Hut is leading the Menu making industry in Bangladesh. Color Hut is best menu provider in Bangladesh",
+    "defaultKeywords": "Color Hut, Restaurant menu Book, Restaurant menu card, Parlour Menu book, Best Restaurant Menu Supplier in Bangladesh, menu design, creative agency Bangladesh",
     "author": "Color Hut Creative Agency",
     "language": "en",
     "locale": "en_US",
-    "siteUrl": "https://colorhut.com",
-    "ogImage": "/og-image.jpg",
-    "twitterHandle": "@colorhut",
+    "siteUrl": "https://colorhutbd.xyz",
+    "ogImage": "/image/logo.png",
+    "twitterHandle": "@colorhutbd",
     "pages": {
         "home": {
-            "title": "Color Hut | Creative Agency - Graphics, Web, Marketing & More",
-            "description": "Transform your brand with Color Hut's premium creative services. Expert graphics design, web development, digital marketing, photography, videography, and customer support. Serving clients globally and across Bangladesh.",
-            "keywords": "creative agency Bangladesh, graphics design services, web development agency, digital marketing Bangladesh, professional photography, video production, brand identity design",
-            "ogTitle": "Color Hut - Your Creative Partner for Digital Success",
-            "ogDescription": "Premium creative services including graphics design, web development, digital marketing, and more. Trusted by businesses worldwide.",
-            "canonical": "https://colorhut.com"
+            "title": "Color Hut | Premium Restaurant & Parlour Menu Solutions",
+            "description": "Color Hut Provide Custom Restaurant and Parlour Menu service in whole Bangladesh. Color Hut served 5000+ Partner all over the world. Color Hut is leading the Menu making industry in Bangladesh. Color Hut is best menu provider in Bangladesh",
+            "keywords": "Color Hut, Restaurant menu Book, Restaurant menu card, Parlour Menu book, Best Restaurant Menu Supplier in Bangladesh, menu design, creative agency Bangladesh",
+            "ogTitle": "Color Hut | Premium Restaurant & Parlour Menu Solutions",
+            "ogDescription": "Color Hut Provide Custom Restaurant and Parlour Menu service in whole Bangladesh. Color Hut served 5000+ Partner all over the world. Color Hut is leading the Menu making industry in Bangladesh. Color Hut is best menu provider in Bangladesh",
+            "canonical": "https://colorhutbd.xyz"
         },
         "services": {
-            "title": "Our Services | Graphics, Web, Marketing & Creative Solutions",
-            "description": "Explore Color Hut's comprehensive creative services: Brand Identity Design, Web & App Development, Digital Marketing Strategy, Video Production, Professional Photography, and Customer Support Solutions.",
+            "title": "Our Services | Premium Restaurant & Parlour Menu Solutions",
+            "description": "Color Hut Provide Custom Restaurant and Parlour Menu service in whole Bangladesh. Color Hut served 5000+ Partner all over the world. Color Hut is leading the Menu making industry in Bangladesh. Color Hut is best menu provider in Bangladesh",
             "keywords": "creative services, brand identity design, web app development, digital marketing strategy, video production, professional photography, customer support",
             "ogTitle": "Premium Creative Services - Color Hut",
             "ogDescription": "From brand identity to digital marketing, we offer complete creative solutions for your business growth.",
-            "canonical": "https://colorhut.com/services/"
+            "canonical": "https://colorhutbd.xyz/services/"
         },
         "meeting": {
             "title": "Book a Meeting | Color Hut Creative Consultation",
@@ -32,7 +32,7 @@
             "keywords": "book consultation, creative consultation, project discussion, free meeting, business consultation",
             "ogTitle": "Book Your Free Consultation - Color Hut",
             "ogDescription": "Get expert advice on your creative projects. Schedule a meeting with our team today.",
-            "canonical": "https://colorhut.com/meeting/"
+            "canonical": "https://colorhutbd.xyz/meeting/"
         },
         "privacy": {
             "title": "Privacy Policy | Color Hut Creative Agency",
@@ -40,7 +40,7 @@
             "keywords": "privacy policy, data protection, personal information, GDPR compliance",
             "ogTitle": "Privacy Policy - Color Hut",
             "ogDescription": "Your privacy matters. Learn how we protect your data and respect your privacy.",
-            "canonical": "https://colorhut.com/privacy/"
+            "canonical": "https://colorhutbd.xyz/privacy/"
         },
         "refund": {
             "title": "Refund Policy | Color Hut Terms & Conditions",
@@ -48,7 +48,7 @@
             "keywords": "refund policy, cancellation policy, terms and conditions, payment terms",
             "ogTitle": "Refund Policy - Color Hut",
             "ogDescription": "Transparent refund and cancellation terms for all our creative services.",
-            "canonical": "https://colorhut.com/refund/"
+            "canonical": "https://colorhutbd.xyz/refund/"
         },
         "luckydraw": {
             "title": "Lucky Draw | ফেব্রুয়ারি ভাষার মাস ক্যাম্পেইন - Color Hut",
@@ -56,7 +56,7 @@
             "keywords": "lucky draw, language month campaign, ফেব্রুয়ারি ভাষার মাস, মাতৃভাষা দিবস ক্যাম্পেইন, Color Hut campaign",
             "ogTitle": "Lucky Draw - ফেব্রুয়ারি ভাষার মাস ক্যাম্পেইন",
             "ogDescription": "মায়ের ভাষা, বাংলা ভাষা — গর্ব ও আবেগের স্মৃতি। Color Hut-এর বিশেষ ক্যাম্পেইনে এখনই অংশগ্রহণ করুন।",
-            "canonical": "https://colorhut.com/luckydraw/"
+            "canonical": "https://colorhutbd.xyz/luckydraw/"
         }
     },
     "departments": [
@@ -95,9 +95,9 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Color Hut Creative Agency",
-        "url": "https://colorhut.com",
-        "logo": "https://colorhut.com/logo.png",
-        "description": "Premium creative agency offering graphics design, web development, digital marketing, photography, and videography services.",
+        "url": "https://colorhutbd.xyz",
+        "logo": "https://colorhutbd.xyz/image/logo.png",
+        "description": "Color Hut Provide Custom Restaurant and Parlour Menu service in whole Bangladesh. Color Hut served 5000+ Partner all over the world. Color Hut is leading the Menu making industry in Bangladesh. Color Hut is best menu provider in Bangladesh",
         "address": {
             "@type": "PostalAddress",
             "addressCountry": "BD",
@@ -105,15 +105,15 @@
         },
         "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+880-XXX-XXXXXX",
+            "telephone": "+8801919760626",
             "contactType": "Customer Service",
-            "email": "info@colorhut.com"
+            "email": "colorhut.official@gmail.com"
         },
         "sameAs": [
-            "https://facebook.com/colorhut",
-            "https://twitter.com/colorhut",
-            "https://linkedin.com/company/colorhut",
-            "https://instagram.com/colorhut"
+            "https://facebook.com/colorhutbd",
+            "https://twitter.com/colorhutbd",
+            "https://linkedin.com/company/colorhutbd",
+            "https://instagram.com/colorhutbd"
         ],
         "areaServed": [
             {
@@ -142,12 +142,12 @@
     },
     "openGraph": {
         "type": "website",
-        "siteName": "Color Hut Creative Agency",
+        "siteName": "Color Hut - Premium Restaurant & Parlour Menu Solutions",
         "locale": "en_US"
     },
     "twitter": {
         "card": "summary_large_image",
-        "site": "@colorhut",
-        "creator": "@colorhut"
+        "site": "@colorhutbd",
+        "creator": "@colorhutbd"
     }
 }
