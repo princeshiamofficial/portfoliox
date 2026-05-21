@@ -17,7 +17,7 @@ export const MeetingSection: React.FC<MeetingSectionProps> = ({ onBookMeeting })
                     <div className="flex flex-col lg:flex-row items-stretch">
 
                         {/* Left Side: Image Area & Pattern */}
-                        <div className="w-full lg:w-[55%] relative bg-white overflow-hidden min-h-[400px] lg:min-h-[550px]">
+                        <div className="w-full lg:w-[55%] relative bg-white overflow-hidden min-h-[300px] lg:min-h-[550px] flex flex-col justify-end">
                             {/* Background Pattern (Dots) */}
                             <div className="absolute inset-0 z-0 opacity-40 pointer-events-none"
                                 style={{
@@ -26,7 +26,7 @@ export const MeetingSection: React.FC<MeetingSectionProps> = ({ onBookMeeting })
                                 }}>
                             </div>
 
-                            <div className="h-full w-full flex items-end justify-center relative z-10 pt-12 lg:pt-16">
+                            <div className="w-full flex items-end justify-center relative z-10 pt-12 lg:pt-16">
 
                                 {/* Floating Icon: Zoom (Orange Circle) */}
                                 <div className="absolute top-[12%] left-[15%] animate-[bounce_3s_infinite] z-30">
