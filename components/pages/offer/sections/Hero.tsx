@@ -105,7 +105,7 @@ export const Hero: React.FC = () => {
               <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white to-transparent z-20 pointer-events-none"></div>
 
               {/* Smoke/Fog Effect at the bottom of the image */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-[55%] w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[500px] h-28 overflow-hidden pointer-events-none z-20">
+              <div className="absolute bottom-0 left-1/2 -translate-x-[55%] w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[500px] h-28 overflow-hidden pointer-events-none z-20 lg:hidden">
                 <div className="smoke-particle smoke-1"></div>
                 <div className="smoke-particle smoke-2"></div>
                 <div className="smoke-particle smoke-3"></div>
