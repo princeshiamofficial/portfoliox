@@ -31,8 +31,8 @@ export const Navbar: React.FC = () => {
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
           <img
-            src="https://colorhutbd.xyz/image/logo.png"
-            alt="Xtrecy Logo"
+            src="/image/logo.png"
+            alt="Color Hut Logo"
             className="h-7 md:h-8 w-auto object-contain"
           />
         </Link>

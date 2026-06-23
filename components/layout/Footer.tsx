@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
                         <div className="mb-6">
                             {/* Using brightness/invert to ensure logo works on dark background */}
                             <img
-                                src="https://colorhutbd.xyz/image/logo.png"
+                                src="/image/logo.png"
                                 alt="Color Hut"
                                 className="h-12 w-auto brightness-0 invert opacity-90"
                             />
